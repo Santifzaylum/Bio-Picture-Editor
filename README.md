@@ -6,9 +6,9 @@ Bio-Picture-Editor（界面名称：图注工坊）是一个在 Windows 本机�
 
 ## 下载与安装
 
-**[下载 Bio-Picture-Editor.zip](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor.zip)**
+**[下载 v1.1：Bio-Picture-Editor-v1.1.zip](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor-v1.1.zip)**
 
-当前提供 Windows x64 轻量版程序包，约 17 MB。压缩包包含应用源码、启动脚本、中文字体、示例和操作指南，不附带 Node.js 或预装依赖。
+当前版本为 **v1.1（2026-09-30）**，提供 Windows x64 轻量版程序包，约 17 MB。压缩包包含应用源码、启动脚本、中文字体、示例和操作指南，不附带 Node.js 或预装依赖。
 
 | 项目 | 要求 |
 | --- | --- |
@@ -18,15 +18,21 @@ Bio-Picture-Editor（界面名称：图注工坊）是一个在 Windows 本机�
 | 安装目录 | 普通可写目录，支持中文与空格路径 |
 | 网络 | 首次安装依赖时需要联网 |
 
-1. 下载上面的 `Bio-Picture-Editor.zip`，右键选择“全部解压”。请完整保留解压后的文件夹。
+1. 下载上面的 `Bio-Picture-Editor-v1.1.zip`，右键选择“全部解压”。请完整保留解压后的文件夹。
 2. 从 [Node.js 官网](https://nodejs.org/)安装符合要求的 Node.js，保留默认附带的 npm；已安装符合要求的版本可跳过。
-3. 进入解压后的 `Bio-Picture-Editor` 文件夹，双击 `Setup.cmd`。看到 `Setup complete` 后，首次初始化完成。
+3. 进入解压后的 `Bio-Picture-Editor-v1.1` 文件夹，双击 `Setup.cmd`。看到 `Setup complete` 后，首次初始化完成。
 4. 日常双击 `启动.vbs` 或 `Start.vbs`，程序会在后台启动并打开浏览器。
 5. 使用结束前保存各张图片，再双击 `停止.vbs` 或 `Stop.vbs` 停止服务。只关闭网页不会停止后台服务。
 
 默认网址为 `http://127.0.0.1:4317/`。如果端口被占用，启动器会选择后续空闲端口、更新 `config.json` 并打开对应网址。系统禁用 VBS 时，可使用 `Start.cmd` / `Stop.cmd`。
 
-> 仓库目前以 ZIP 形式提供完整程序。使用 GitHub 的“Code → Download ZIP”下载仓库后，还需要解压其中的 `Bio-Picture-Editor.zip`，才能找到启动文件。
+> 仓库目前以 ZIP 形式提供完整程序。使用 GitHub 的“Code → Download ZIP”下载仓库后，还需要解压其中的 `Bio-Picture-Editor-v1.1.zip`，才能找到启动文件。
+
+## v1.1 更新
+
+本次更新改善图片导航与多选操作。在选择工具下，图片或含留白的版面超出可见范围时，空白处自动显示抓手，鼠标左键拖动即可平移；移到已有标注或控制点上时，自动恢复对象选择与编辑。箭头、直线、文字、关联引线、矩形和椭圆的绘制方式保持原有行为。
+
+画布和右侧标注列表统一使用 **Ctrl+点击**增加或取消多选。原空格加拖动平移已取消，中键平移仍可使用；Shift 继续用于绘图约束和大步微调。安装方式、项目格式及原分辨率导出规则保持兼容，升级步骤见[操作指南](USAGE.md#升级到-v11)。
 
 ## 主要功能
 
@@ -59,7 +65,8 @@ Bio-Picture-Editor（界面名称：图注工坊）是一个在 Windows 本机�
 | 复制 / 粘贴 / 复制副本 | Ctrl+C / Ctrl+V / Ctrl+D |
 | 删除 / 取消 | Delete / Esc |
 | 微调 / 大步移动 | 方向键 / Shift+方向键 |
-| 缩放 / 平移 | 滚轮 / 空格+左键拖动，或中键拖动 |
+| 多选 / 取消多选 | Ctrl+点击画布对象或右侧列表 |
+| 缩放 / 平移 | 滚轮 / 选择工具下放大后的空白处左键拖动，或中键拖动 |
 
 ## 数据保存与备份
 
