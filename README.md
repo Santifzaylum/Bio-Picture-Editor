@@ -1,56 +1,81 @@
-# 生物图片编辑器 · Bio-Picture-Editor v1.1-p
+# 生物图片编辑器 · Bio-Picture-Editor
 
-生物图片编辑器是一个在 Windows 本机运行的生物医学图片编辑与标注工具，适合组织切片照片、医学大体照片和实验配图。支持文字、箭头、直线、矩形、椭圆、关联引线、多图片标签页、可编辑项目、便携项目包，以及原分辨率 PNG 导出。
+生物图片编辑器是一个在 Windows 本机运行的生物医学图片编辑与标注工具，适合组织切片照片、医学大体照片和实验配图。支持文字、箭头、直线、矩形、椭圆、关联引线、多图片标签页、可编辑项目、便携项目包，以及原分辨率 PNG 导出。图片在本机处理，编辑器不会自动上传图片。
 
-**v1.1-p 提供可直接打开的桌面 EXE。** 双击“生物图片编辑器.exe”后，程序会自动检查依赖，缺失时显示安装进度，完成后进入原有编辑界面。无需手动运行 Setup、启动脚本或打开浏览器。图片与项目在本机处理，不会自动上传。
+**同时提供两种使用方式：v1.1 浏览器 WebUI 版和 v1.1-p 桌面 EXE 版。** 熟悉原有网页方式的用户可以继续使用 v1.1；希望双击程序、自动初始化的用户可以选择 v1.1-p。两种方式的核心编辑界面、标注逻辑和项目格式保持兼容，安装入口、运行环境与数据位置有所不同。
 
-## 下载 v1.1-p
+## 选择版本与下载
 
-[下载 Windows x64 桌面版 ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) · [发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-p) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip.sha256)
+| 项目 | v1.1 · 浏览器 WebUI 版 | v1.1-p · 桌面 EXE 版 |
+| --- | --- | --- |
+| 下载 | [Bio-Picture-Editor-v1.1.zip](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor-v1.1.zip) | [Bio-Picture-Editor-v1.1-p.zip](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) |
+| 程序包 | 约 17 MB，含完整 v1.1 源码、脚本、字体、示例和文档 | 约 38.94 MiB（40.84 MB），含 EXE、示例、CLI 包装脚本、文档和许可 |
+| 首次准备 | 安装 Node.js 22.12 或更新版本及 npm，再运行 Setup.cmd | 双击 EXE，自动检查并准备依赖，显示初始化进度 |
+| 日常启动 | 双击 启动.vbs / Start.vbs，在浏览器中编辑 | 双击 生物图片编辑器.exe，在桌面窗口中编辑 |
+| 界面环境 | 本地浏览器，推荐 Microsoft Edge | Microsoft WebView2；缺失时自动下载安装 |
+| 运行环境 | 使用系统 Node.js 与程序目录内的 npm 依赖 | 独立 Node.js 环境；自动复制兼容的本地 Node，或下载锁定版本 |
+| 结束使用 | 保存后运行 停止.vbs / Stop.vbs；关闭网页不会停止后台服务 | 保存后关闭窗口，停止本窗口启动的服务 |
+| 已保存项目 | 解压目录内的 data/projects/ | %LOCALAPPDATA%\Bio-Picture-Editor\data\projects\ |
+| 自动草稿 | 普通浏览器中的 IndexedDB，与浏览器和端口有关 | 桌面 WebView2 配置目录中的草稿，与普通浏览器分开 |
 
-程序包约 **38.94 MiB（40.84 MB）**。完整解压后双击 **生物图片编辑器.exe**；缺少依赖时自动初始化，完成后进入原有编辑界面。请下载 Releases 中同名程序包；GitHub 自动生成的“Source code (zip)”和“Code → Download ZIP”是仓库快照，不包含该桌面程序成品。
+两种方式都面向 Windows 10 / 11 x64，首次安装缺失依赖需要联网，初始化后核心编辑可离线使用。桌面版另外要求 Windows 10 1607+ 和系统保留 .NET Framework 4.6.2+。v1.1 现有程序包的界面仍使用原名称“图注工坊”；v1.1-p 的软件名称为“生物图片编辑器”。
 
-## 开始使用
+## v1.1：浏览器 WebUI 使用方式
 
-1. 完整解压 `Bio-Picture-Editor-v1.1-p.zip`，双击 `生物图片编辑器.exe`。
-2. 等待首次初始化完成。已有兼容环境时自动复用；缺少环境时需联网下载，失败可点击“重试”。
-3. 打开、拖入或粘贴图片，使用左侧工具添加标注，在右侧调整文字与样式。
-4. 按 `Ctrl+S` 保存可编辑项目，再导出 PNG 或 `.biozip`。关闭窗口会停止该窗口启动的本地服务。
+[下载 v1.1 WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor-v1.1.zip) · [完整 WebUI 操作指南](USAGE-v1.1.md) · [WebUI Codex 协作指南](CODEX_GUIDE-v1.1.md)
 
-当前桌面程序通过 GitHub Releases 分发。仓库根目录中的 v1.1 / v1.0 ZIP 保留为历史版本；其安装方式与当前 EXE 版不同。
+1. 下载并完整解压 Bio-Picture-Editor-v1.1.zip，保留整个程序文件夹。
+2. 从 [Node.js 官网](https://nodejs.org/)安装 Node.js 22.12 或更新版本，保留随附 npm；已有符合要求的环境可跳过。
+3. 在解压后的程序文件夹双击 Setup.cmd，等待安装锁定依赖并构建，出现 Setup complete 后完成初始化。
+4. 日常双击 启动.vbs 或 Start.vbs，浏览器会自动打开本地编辑页面。默认地址为 http://127.0.0.1:4317/；端口冲突时启动器选择后续端口并更新 config.json。
+5. 使用结束前逐张保存或导出便携包，然后双击 停止.vbs 或 Stop.vbs，停止本地服务。仅关闭浏览器页面不会停止服务。
 
-| 项目 | 要求或行为 |
-| --- | --- |
-| 系统 | Windows 10（1607 或更新）/ Windows 11，64 位 x64，保留系统内置 .NET Framework 4.6.2 或更新版本 |
-| 本地运行环境 | 自动复制电脑上兼容的 Node.js 22.12+ / 23 / 24 系列，或下载锁定的 Node.js 22.23.3 |
-| 界面环境 | 检查 Microsoft WebView2，缺失时从微软下载并验证数字签名后安装 |
-| 图片处理与字体 | 包含在 EXE 中，用户电脑无需执行 npm 安装或源码构建 |
-| 网络 | 缺少环境时首次安装需联网；初始化后核心编辑功能可离线使用 |
-| 权限 | 默认安装在当前用户本地目录，无需管理员权限；系统策略限制时可能需要管理员协助 |
+系统禁用 VBS 时使用 Start.cmd / Stop.cmd。网页没有自动打开时，根据 config.json 中的 port 手动访问本地地址。此版本继续保留原有网页使用方式，无需改用 EXE。通过“Code → Download ZIP”下载的是仓库副本，需要继续解压其中的 Bio-Picture-Editor-v1.1.zip 才能找到启动文件。
 
-## 功能与操作
+## v1.1-p：桌面 EXE 使用方式
 
-多图片标签页分别保留图片、标注、视口、未保存状态和当前会话的撤销记录。**保存、导出 PNG 和导出便携包均作用于当前标签页，请逐张执行。** 当前不支持多图拼版或批量导出。
+[下载 v1.1-p 桌面程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) · [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-p) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip.sha256)
 
-选择工具下，版面超出可见区域时，在空白处左键抓手拖动即可平移；标注和控制点优先响应编辑。画布与右侧列表使用 **Ctrl+点击** 多选。Shift 用于绘图约束和大步微调，中键平移保留。右侧可设置样式、文字底板、图层、锁定状态和版面留白。
+1. 完整解压 Bio-Picture-Editor-v1.1-p.zip，双击 生物图片编辑器.exe。
+2. 首次打开检查依赖；缺失时显示安装进度，完成后自动进入原有编辑界面。已有兼容环境时复用，下载失败可点击“重试”。
+3. 打开、拖入或粘贴图片，在左侧添加标注，在右侧调整文字与样式；按 Ctrl+S 保存项目，再导出 PNG 或 .biozip。
+4. 结束前保存各张图片并关闭窗口；程序检查未保存内容、写入草稿，并停止本窗口启动的本地服务。
 
-项目保存保留原图、结构化标注与图注；PNG 可选择原分辨率或 2× / 4×。便携包包含原图和标注，适合备份与迁移。程序保留本地 CLI，可与 Codex 协作查看项目、修改标注和生成预览。
+桌面版无需手动运行 Setup、npm、源码构建或启动脚本。所需编辑页面、图片处理组件、原生库与中文字体包含在 EXE 中；缺少 Node.js 或 WebView2 时从官方来源下载并校验。安装日志、草稿与项目默认保存在当前用户本地目录。详细操作见 [操作指南中的桌面版说明](USAGE.md#v11-p桌面-exe-版)。
 
-## 数据与升级
+请在 Releases 的 Assets 下载同名桌面程序包。GitHub 自动附带的 Source code ZIP/TAR 或“Code → Download ZIP”是仓库快照，不包含 v1.1-p 的 EXE 成品。
 
-桌面版默认数据目录为 `%LOCALAPPDATA%\Bio-Picture-Editor\`。已保存项目在 `data/projects/`，草稿与偏好在 `webview-profile/`，应用组件另存于版本化目录。替换 EXE 升级不会主动删除项目或草稿。
+## 两种方式的共同功能
 
-旧版数据不会自动迁移。建议在旧版逐张导出 `.biozip`，在新版打开并保存；也可停止两个版本、备份后复制旧版 `data/projects/`。普通浏览器中的草稿与桌面版分开，升级前请显式保存或导出便携包。
+支持普通 8 位 PNG/JPEG 导入、中文和多行文字、箭头、关联引线、直线、矩形、椭圆、颜色和样式调整、图层与锁定、多图片标签页和原图四周留白。选择工具下，放大后在空白处左键抓手拖动平移，已有标注和控制点优先响应编辑；画布与右侧列表使用 Ctrl+点击多选。Shift 保留绘图约束和大步微调，中键平移可用。
 
-## 文档与开发
+项目保存保留原图、结构化标注和图注；PNG 可按原分辨率或 2× / 4× 导出；.biozip 便携包用于备份和迁移。各标签页分别保留视口、未保存状态和当前会话的撤销记录。**保存、导出 PNG 和导出便携包均作用于当前标签页，请逐张执行。** 当前不支持多图拼版或批量导出。
 
-- [操作指南](USAGE.md)：安装、标注、多图、保存、导出、迁移和常见问题。
-- [Codex 协作指南](CODEX_GUIDE.md)：本地接口和命令行。
-- [版本记录](CHANGELOG.md)：v1.1-p 与此前版本。
-- [实现与验收记录](V1.1-P-REPORT.md)：已实现功能、实测结果及尚未覆盖的验证分支。
+## 数据保存与两种方式间迁移
 
-本仓库当前主要维护发布包和文档。v1.1-p 的完整开发源码尚未同步至仓库；发布 ZIP 提供 EXE、示例、CLI 包装脚本、操作文档和许可，桌面构建说明见随包 DESKTOP-BUILD.md。
+| 内容 | v1.1 WebUI | v1.1-p EXE |
+| --- | --- | --- |
+| 已保存项目、原图与修订 | 程序目录/data/projects/ | %LOCALAPPDATA%\Bio-Picture-Editor\data\projects\ |
+| PNG 导出副本 | 对应项目 exports/ 目录，另通过浏览器下载 | 对应项目 exports/ 目录，另用 Windows 另存为对话框保存 |
+| 草稿与偏好 | 原浏览器、网址及端口对应的浏览器数据 | %LOCALAPPDATA%\Bio-Picture-Editor\webview-profile\ |
 
-支持范围仍为普通 8 位 PNG / JPEG，暂不支持 TIFF、DICOM、全切片、多通道、高位深、多图拼版、比例尺测量或自动识别。图片及输出最多 6400 万像素、输出单边最多 16384 px，实际能力取决于内存。2× / 4× 放大不会增加照片本身的细节。
+两种方式不会自动共享数据目录或草稿。迁移时在原版本逐张保存并导出 .biozip，再在目标版本打开并保存。需要复制整批项目目录时，先停止两边的服务并备份，再复制 data/projects/ 中的项目，避免覆盖同名内容。浏览器或桌面自动草稿不能代替显式保存与备份。
 
-第三方组件、字体与示例保留各自许可，见 `THIRD-PARTY-NOTICES.txt` 和随包许可文件。本项目整体软件许可证尚未指定。
+WebUI 版可以继续独立使用；切换到桌面版由用户自行选择。桌面版替换 EXE 升级不会主动删除项目或草稿。
+
+## 文档与源码
+
+- [操作指南](USAGE.md)：并列说明两种方式的下载、安装、操作与迁移。
+- [v1.1 WebUI 完整指南](USAGE-v1.1.md)：保留原网页版本的详细操作与常见问题。
+- [Codex 协作指南](CODEX_GUIDE.md)：分别说明 WebUI 与桌面版 CLI 和数据目录。
+- [v1.1 WebUI 完整协作指南](CODEX_GUIDE-v1.1.md)：源码 CLI、坐标与修订冲突说明。
+- [版本记录](CHANGELOG.md)：v1.1 与 v1.1-p 的功能和交付方式。
+- [v1.1-p 实现与验收记录](V1.1-P-REPORT.md)：桌面版实测结果及尚未覆盖的验证分支。
+
+v1.1 完整源码包含在 WebUI 程序 ZIP 中，可按原脚本流程构建。v1.1-p 桌面包提供 EXE 与使用资源，完整桌面开发源码尚未同步至仓库；桌面构建流程见随包 DESKTOP-BUILD.md。仓库中的 Bio-Picture-Editor.zip 对应更早版本，仍作为历史文件保留。
+
+## 支持范围与许可
+
+暂不支持 TIFF、DICOM、全切片、多通道、高位深图片、比例尺测量或自动识别。图片和输出最多 6400 万像素、输出单边最多 16384 px，实际能力取决于内存；2× / 4× 放大不会增加照片本身的细节。
+
+第三方组件、字体与示例保留各自许可，见程序包中的 THIRD-PARTY-NOTICES.txt 和随包许可文件。本项目整体软件许可证尚未指定。

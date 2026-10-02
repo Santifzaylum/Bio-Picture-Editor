@@ -1,12 +1,18 @@
-# 生物图片编辑器与 Codex 协作
+# 生物图片编辑器与 Codex 协作：WebUI 与桌面 EXE
 
 桌面版保留本地网页和命令行接口。Codex 可以在授权范围内查看项目图片、读取结构化标注、修改内容并生成预览；编辑器不会自动发送图片到模型。
 
-## 获取桌面版
+## v1.1：WebUI 与源码 CLI
+
+按 [README](README.md) 下载 WebUI 版并运行 Setup.cmd，双击 启动.vbs，保存目标项目后保持服务运行。进入该解压目录执行 npm run cli -- list、npm run cli -- summary PROJECT_ID 等命令，也可使用该版本自带的 Codex-CLI.cmd。项目数据使用该目录的 data/projects/，本地网页端口以 config.json 为准。
+
+完整命令、像素坐标、补丁格式和修订冲突说明见 [v1.1 WebUI 协作指南](CODEX_GUIDE-v1.1.md)。两个版本各自使用所属程序目录和数据目录中的 CLI，不要混用同名包装脚本。
+
+## v1.1-p：桌面版与独立运行环境
 
 从[发布页面](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-p)下载并解压 Bio-Picture-Editor-v1.1-p.zip，使用其中的 EXE 和 Codex-CLI.cmd。CLI 包装脚本与当前安装目录配合使用，旧版源码脚本不适用于桌面版独立运行环境。
 
-## 准备与命令
+### 准备与命令
 
 双击生物图片编辑器.exe 完成初始化，打开图片并保存项目，保持窗口运行。发布包内 Codex-CLI.cmd 会读取当前安装信息，不要求系统安装 Node.js，也无需使用源码目录。
 
@@ -25,7 +31,7 @@ patch 使用 UTF-8 JSON，提交时提供当前项目修订号，避免覆盖其
 
 若需用本地浏览器访问编辑器，打开 data/runtime.json 中端口对应的 http://127.0.0.1:端口/。浏览器草稿和桌面草稿分开，但已保存项目使用同一个本地服务。
 
-## 源码与测试
+### 源码与测试
 
 v1.1-p 桌面发布包不包含完整开发源码；当前仓库中的历史 ZIP 对应此前版本。完整桌面构建源码尚未同步至 GitHub。发布包内 DESKTOP-BUILD.md 记录开发环境和构建流程，普通使用和本地 CLI 无需源码构建。
 
