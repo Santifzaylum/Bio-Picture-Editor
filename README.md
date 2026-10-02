@@ -27,7 +27,7 @@
 1. 下载并完整解压 Bio-Picture-Editor-v1.1.zip，保留整个程序文件夹。
 2. 从 [Node.js 官网](https://nodejs.org/)安装 Node.js 22.12 或更新版本，保留随附 npm；已有符合要求的环境可跳过。
 3. 在解压后的程序文件夹双击 Setup.cmd，等待安装锁定依赖并构建，出现 Setup complete 后完成初始化。
-4. 日常双击 启动.vbs 或 Start.vbs，浏览器会自动打开本地编辑页面。默认地址为 http://127.0.0.1:4317/；端口冲突时启动器选择后续端口并更新 config.json。
+4. 日常双击 启动.vbs 或 Start.vbs，浏览器会自动打开本地编辑页面。默认地址为 `http://127.0.0.1:4317/`；端口冲突时启动器选择后续端口并更新 config.json。
 5. 使用结束前逐张保存或导出便携包，然后双击 停止.vbs 或 Stop.vbs，停止本地服务。仅关闭浏览器页面不会停止服务。
 
 系统禁用 VBS 时使用 Start.cmd / Stop.cmd。网页没有自动打开时，根据 config.json 中的 port 手动访问本地地址。此版本继续保留原有网页使用方式，无需改用 EXE。通过“Code → Download ZIP”下载的是仓库副本，需要继续解压其中的 Bio-Picture-Editor-v1.1.zip 才能找到启动文件。

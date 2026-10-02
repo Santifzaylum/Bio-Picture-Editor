@@ -13,7 +13,7 @@
 
 1. 完整解压程序包，安装 Node.js 22.12 或更新版本并保留 npm。
 2. 在程序文件夹双击 Setup.cmd，等待 Setup complete。首次依赖安装与构建需要联网。
-3. 日常双击 启动.vbs / Start.vbs，在自动打开的浏览器中编辑。默认 http://127.0.0.1:4317/；端口变更以 config.json 为准。
+3. 日常双击 启动.vbs / Start.vbs，在自动打开的浏览器中编辑。默认 `http://127.0.0.1:4317/`；端口变更以 config.json 为准。
 4. 结束前逐张保存，然后运行 停止.vbs / Stop.vbs。关闭网页不会停止后台服务。VBS 不可用时可用 Start.cmd / Stop.cmd。
 
 项目保存在程序目录的 data/projects/，PNG 通过浏览器下载，并在项目 exports/ 留副本。草稿保存在当前浏览器的 IndexedDB，与浏览器及端口有关。更换浏览器或程序目录前先保存并导出 .biozip。完整的标注、多图、导出、升级及故障排查见 [v1.1 WebUI 完整操作指南](USAGE-v1.1.md)。
