@@ -1,137 +1,77 @@
-# 生物图片编辑器 · Bio-Picture-Editor
+# 生物图片编辑器 · v2.1-webui
 
-生物图片编辑器在本机处理生物医学图片与标注，支持文字、箭头、关联引线、直线、矩形、椭圆、多图片标签页、可编辑项目、便携包和 PNG 导出。支持“ChatGPT 对话规划 → Codex 本地执行 → 编辑器复核”的协作流程，编辑器不会自动上传图片。
+在 Windows 本机运行的生物医学图片标注编辑器。保留浏览器 WebUI，支持中文文字、箭头、关联引线、直线、矩形、椭圆、圆形局部放大、多图片标签页、可继续编辑的项目与 PNG 导出。图片在本机处理，编辑器不会自动上传图片。
 
-**三个版本并行提供：v1.1 Windows WebUI、v1.1-p Windows EXE，以及 v1.1-macweb Apple Silicon Mac WebUI。** 原有两个 Windows 版本及下载入口继续保留，可按系统与习惯选择。
+**当前主版本为 v2.1-webui。** 下载 [Windows WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip)，查看 [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui) 或 [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip.sha256)。本包约 16.28 MiB，采用网页方式运行，不包含 EXE、Node.js 或预装依赖。
 
-> **v1.1-macweb 当前为开发版本（Pre-release），未进行测试。** 仅完成代码移植、编译和打包，没有进行本地运行测试、Mac 实机测试或浏览器交互测试；首次启动、图片处理、保存导出与 CLI 的实际运行情况均待后续验证。原有 Windows 版的验证结果不能作为 Mac 版的测试结论。
+## 安装、启动与退出
 
-## 选择版本与下载
+1. 使用 Windows 10/11 x64，从 [Node.js 官网](https://nodejs.org/)安装 Node.js 22.12 或更新版本，保留附带的 npm。完整解压 Bio-Picture-Editor-v2.1-webui.zip，保留整个程序文件夹。
+2. 首次双击 Setup.cmd，等待依赖安装与构建完成。首次初始化需要联网，完成后核心编辑功能可离线使用。
+3. 日常双击 启动.vbs / Start.vbs，打开浏览器中的编辑器。默认地址为 `http://127.0.0.1:4321/`；端口被占用时启动器选择后续空闲端口并更新 config.json。
+4. 使用结束前逐张保存或导出便携项目包，再运行 停止.vbs / Stop.vbs。仅关闭网页不会停止后台服务。
 
-| 项目 | v1.1 · Windows WebUI | v1.1-p · Windows EXE | v1.1-macweb · Mac WebUI |
-| --- | --- | --- | --- |
-| 状态 | 原有发布版，继续保留 | 原有正式发布版，继续保留 | **开发版本，未进行测试；Pre-release** |
-| 系统 | Windows 10 / 11 x64 | Windows 10 1607+ / 11 x64，保留 .NET Framework 4.6.2+ | macOS 14+，仅 M 系列 / Apple Silicon arm64 |
-| 下载 | [v1.1 WebUI ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip) | [v1.1-p EXE ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) | [v1.1-macweb ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-macweb/Bio-Picture-Editor-v1.1-macweb-arm64.zip) |
-| 包体积 | 约 17 MB | 约 38.94 MiB（40.84 MB） | 约 34.92 MiB（36.61 MB） |
-| 首次准备 | 安装 Node.js 22.12+ 与 npm，再运行 Setup.cmd | 双击 EXE，自动检查并准备依赖 | 双击启动.command，自动下载校验独立 Node；字体及图片处理依赖随包提供 |
-| 日常启动 | 启动.vbs / Start.vbs，打开浏览器 | 生物图片编辑器.exe，打开桌面窗口 | 启动.command，打开默认浏览器 |
-| 结束使用 | 保存后运行停止脚本；关闭网页不停止服务 | 保存后关闭窗口，停止本窗口启动的服务 | 保存后点击网页“退出程序”，或运行停止.command；关闭网页不停止服务 |
-| 已保存项目 | 解压目录内 data/projects/ | %LOCALAPPDATA%\\Bio-Picture-Editor\\data\\projects\\ | ~/Library/Application Support/Bio-Picture-Editor/macweb/data/projects/ |
-| 自动草稿 | 浏览器 IndexedDB，与浏览器及端口有关 | 独立 WebView2 profile，与普通浏览器分开 | 浏览器 IndexedDB，与浏览器及固定端口有关 |
+系统禁用 VBS 时使用 Start.cmd / Stop.cmd。建议将程序解压到普通可写目录。详细操作和常见问题见 [操作指南](USAGE.md)。
 
-原有两个版本面向 Windows；Mac WebUI 仅面向 Apple Silicon，不支持 Intel Mac。首次准备缺失环境需要联网，初始化后设计为可离线使用，Mac 实际行为尚未验证。v1.1 原包界面仍使用“图注工坊”，v1.1-p 与 v1.1-macweb 使用“生物图片编辑器”。
+## v2.1 的改进
 
-## v1.1-WebUI：浏览器 WebUI 使用方式
-
-[下载 v1.1 WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip) · [完整 WebUI 操作指南](USAGE-v1.1.md) · [WebUI Codex 协作指南](CODEX_GUIDE-v1.1.md) · [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-webui) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip.sha256)
-
-1. 下载并完整解压 Bio-Picture-Editor-v1.1.zip，保留整个程序文件夹。
-2. 从 [Node.js 官网](https://nodejs.org/)安装 Node.js 22.12 或更新版本，保留随附 npm；已有符合要求的环境可跳过。
-3. 在解压后的程序文件夹双击 Setup.cmd，等待安装锁定依赖并构建，出现 Setup complete 后完成初始化。
-4. 日常双击 启动.vbs 或 Start.vbs，浏览器会自动打开本地编辑页面。默认地址为 `http://127.0.0.1:4317/`；端口冲突时启动器选择后续端口并更新 config.json。
-5. 使用结束前逐张保存或导出便携包，然后双击 停止.vbs 或 Stop.vbs，停止本地服务。仅关闭浏览器页面不会停止服务。
-
-系统禁用 VBS 时使用 Start.cmd / Stop.cmd。网页没有自动打开时，根据 config.json 中的 port 手动访问本地地址。此版本继续保留原有网页使用方式，无需改用 EXE。通过“Code → Download ZIP”下载的是仓库快照；在其中的 source/editions/v1.1-webui/ 目录运行 Setup.cmd 与启动脚本。普通用户建议直接下载 Release 的程序 ZIP。
-
-## v1.1-p：桌面 EXE 使用方式
-
-[下载 v1.1-p 桌面程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) · [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-p) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip.sha256)
-
-1. 完整解压 Bio-Picture-Editor-v1.1-p.zip，双击 生物图片编辑器.exe。
-2. 首次打开检查依赖；缺失时显示安装进度，完成后自动进入原有编辑界面。已有兼容环境时复用，下载失败可点击“重试”。
-3. 打开、拖入或粘贴图片，在左侧添加标注，在右侧调整文字与样式；按 Ctrl+S 保存项目，再导出 PNG 或 .biozip。
-4. 结束前保存各张图片并关闭窗口；程序检查未保存内容、写入草稿，并停止本窗口启动的本地服务。
-
-桌面版无需手动运行 Setup、npm、源码构建或启动脚本。所需编辑页面、图片处理组件、原生库与中文字体包含在 EXE 中；缺少 Node.js 或 WebView2 时从官方来源下载并校验。安装日志、草稿与项目默认保存在当前用户本地目录。详细操作见 [操作指南中的桌面版说明](USAGE.md#v11-p桌面-exe-版)。
-
-请在 Releases 的 Assets 下载同名桌面程序包。GitHub 自动附带的 Source code ZIP/TAR 或“Code → Download ZIP”是仓库快照，不包含 v1.1-p 的 EXE 成品。
-
-## v1.1-macweb：Mac 浏览器 WebUI（开发版本，未测试）
-
-[下载 M 系列 Mac ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-macweb/Bio-Picture-Editor-v1.1-macweb-arm64.zip) · [Pre-release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-macweb) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-macweb/Bio-Picture-Editor-v1.1-macweb-arm64.zip.sha256) · [完整 Mac 操作指南](MACWEB-USAGE.md) · [后续验证清单](MACWEB-TESTING.md)
-
-**当前为开发版本，未进行测试，请作为尝试验证的版本使用。** 发布包已在 Windows 完成编译和打包；Mac 用户不需要编译 .app，也不需要安装 npm、Xcode 或开发者证书。沿用原编辑界面与功能实现，实际兼容性和输出正确性待验证。
-
-1. 在 macOS 14+ 的 M 系列 Mac 上完整解压 Bio-Picture-Editor-v1.1-macweb-arm64.zip，保留 core/、launcher/ 和清单文件。
-2. 双击启动.command。首次从 Node.js 官方下载固定的 arm64 运行时并校验，安装随包组件与字体，再自动打开默认浏览器；首次需要联网。
-3. 使用 Command+O / Command+S 打开与保存，Command+点击多选，Command+Z 撤销。保存项目、便携包和 PNG 导出仍只作用于当前图片标签页，请逐张操作。
-4. PNG、便携包和标注清单通过浏览器下载，实际保存位置由浏览器设置决定，请在下载列表确认。
-5. 结束前保存所有窗口的项目，点击网页“退出程序”保存当前页面全部图片标签页草稿并停止服务；也可先保存，再运行停止.command 并确认。仅关闭网页或启动终端不会停止后台服务。
-
-网络下载的脚本可能需要按 macOS 提示允许打开；解压工具未保留执行权限时，可在发布目录运行 `bash ./启动.command`。数据目录为 `~/Library/Application Support/Bio-Picture-Editor/macweb/`。CLI 随包提供 `Codex-CLI.command`，无需系统 Node，用法见 [Mac 指南](MACWEB-USAGE.md#cli-与-codex-协作)。
-
-Mac 版沿用项目与 .biozip 格式，跨平台交换已保存项目的实际兼容性待验证。不同系统字体可能导致字宽或换行差异，可选择随包的思源黑体。草稿属于浏览器与端口，不能代替备份。请下载 Release 的 Assets 中同名 ZIP；GitHub 自动附带的 Source code ZIP/TAR 是仓库快照，不能当作本版本运行包。
-
-## 共用功能与 Mac 验证范围
-
-支持普通 8 位 PNG/JPEG 导入、中文和多行文字、箭头、关联引线、直线、矩形、椭圆、颜色和样式调整、图层与锁定、多图片标签页和原图四周留白。选择工具下，放大后在空白处左键抓手拖动平移，已有标注和控制点优先响应编辑；画布与右侧列表在 Windows 使用 Ctrl+点击多选，Mac 使用 Command+点击。Shift 保留绘图约束和大步微调，中键平移可用。
-
-项目保存保留原图、结构化标注和图注；PNG 可按原分辨率或 2× / 4× 导出；.biozip 便携包用于备份和迁移。各标签页分别保留视口、未保存状态和当前会话的撤销记录。**保存、导出 PNG 和导出便携包均作用于当前标签页，请逐张执行。** 当前不支持多图拼版或批量导出。
-
-## 与 ChatGPT 深度联动
-
-**三个版本的实现都保留“ChatGPT 对话规划 → Codex 本地执行 → 编辑器复核”的协作流程。** 可以围绕同一张图片持续讨论标注名称、图注文字、箭头位置与样式，再通过项目文件和 CLI 将修改落实到可继续编辑的项目中，生成预览并反复调整。
-
-| 协作环节 | 具体用法 |
+| 改进 | 当前行为 |
 | --- | --- |
-| ChatGPT 讨论与规划 | 将你选择的原图、局部截图或标注预览提供给 ChatGPT，结合你的说明讨论区域命名、图注表达、标注位置和排版方案，形成明确的修改要求 |
-| Codex 执行修改 | 在你授权的本地环境中，读取项目摘要、标注 ID 与像素坐标，通过 CLI 修改已有标注的文字、位置、颜色、字号等，并生成预览或导出 PNG |
-| 编辑器复核与迭代 | 在 WebUI 或 EXE 界面检查修改结果，继续手动绘制或调整；外部修改使用修订号校验，避免直接覆盖未保存的编辑 |
-| 项目交接与复用 | 导出 .biozip 保留原图与结构化标注，用于备份、跨电脑或不同版本之间交接；继续协作时可提供预览和修改要求，具备文件处理能力的工具也可读取项目包 |
+| 名称与图标 | 左上角使用“生物图片编辑器”和生物图像主题 SVG；工具文字右侧有 SVG。关联引线与局部放大图标已重绘，比例和边界统一 |
+| 颜色选择 | 仅颜色控件触发颜色选择，不再由“颜色”文字及同行空白重复唤出 |
+| 查看原图 | 显示醒目的只读提示，暂停绘制、拖动编辑、属性修改和编辑快捷键，避免隐藏误标注；仍可缩放和平移，点击“返回标注编辑”继续 |
+| 局部放大布局 | 放大圆在取样区附近创建，初始连接线为 32 px。移动、控制点、复制、方向键及 CLI 统一按完整边界补足四周留白，保留原图位置与已有留白 |
+| 局部放大移动 | 拖取样圆内部移动取样，拖放大圆移动展示，拖连接线或按 Alt 拖动整组；支持半径、倍率控制点和精确坐标输入 |
+| 独立线条样式 | 取样圆、连接线、放大圆分别设置颜色、线宽、虚线和对比描边，项目保存、便携包和 PNG 导出保留样式 |
 
-建议先保存目标项目，再提出具体任务，例如：
+局部放大用于呈现已有像素，不会恢复照片原本没有的细节。文字、图形、多图片、抓手平移、Ctrl 多选、撤销重做和本地 CLI 等原有能力继续提供。
 
-> 请先读取这个项目的 summary 和 display.png，确认现有标注 ID 与像素坐标，将我指定的文字改为“目标区域”，统一字号和颜色；修改前读取最新修订号，完成后生成预览，让我在编辑器中复核。
+## 保存、备份与升级
 
-这套联动通过对话、项目文件和本地 CLI 完成；程序目前没有内置 ChatGPT 聊天面板或自动调用模型。ChatGPT 云端对话不能直接访问你的本地文件或 localhost，实际执行需要可访问该项目的本地 Codex 或其他获授权工具。图片是否发送给模型由你选择的对话和工具操作决定，编辑器不会自动上传；医学名称与区域判断由用户复核。Windows 准备步骤见 [Codex 协作指南](CODEX_GUIDE.md)，Mac 命令与初始化见 [Mac 指南](MACWEB-USAGE.md)。Mac 协作实现尚未进行运行验证。
+已保存项目位于程序目录 `data/projects/<项目ID>/`，包含原图、标注、图注和修订。浏览器自动草稿依赖浏览器、网址和端口，不能替代显式保存。**保存、导出 PNG 和导出 .biozip 都作用于当前图片标签页，请逐张执行。**
 
-## 数据保存与三个版本间迁移
+可导入 v1.1/v2.0 的 .biozip。升级前在旧版逐张保存并导出备份，再在新版打开并保存。v2.1 使用独立程序目录、默认端口和浏览器草稿库，不自动迁移旧版未保存草稿；新独立线条属性需要 v2.1 或更新版本读取，不建议把新版项目交回旧版覆盖保存。
 
-| 内容 | v1.1 Windows WebUI | v1.1-p Windows EXE | v1.1-macweb Mac WebUI |
-| --- | --- | --- | --- |
-| 已保存项目、原图与修订 | 程序目录/data/projects/ | %LOCALAPPDATA%\\Bio-Picture-Editor\\data\\projects\\ | ~/Library/Application Support/Bio-Picture-Editor/macweb/data/projects/ |
-| PNG 副本 | 项目 exports/，另通过浏览器下载 | 项目 exports/，另用 Windows 另存为保存 | 项目 exports/，另通过浏览器下载；实际输出待验证 |
-| 草稿与偏好 | 原浏览器、网址及端口对应数据 | 独立 webview-profile/ | 日常浏览器、用户配置及固定端口对应数据 |
+## 源码与构建
 
-
-三个版本不会自动共享数据目录或草稿。迁移时在原版本逐张保存并导出 .biozip，再在目标版本打开并保存。需要复制整批项目目录时，先停止相关版本的服务并备份，再复制 data/projects/ 中的项目，避免覆盖同名内容。浏览器或桌面自动草稿不能代替显式保存与备份。
-
-WebUI 版可以继续独立使用；切换到桌面版由用户自行选择。桌面版替换 EXE 升级不会主动删除项目或草稿。
-
-## v1.1-WebUI 源码与开发
-
-完整源码位于 [source/editions/v1.1-webui/](source/editions/v1.1-webui/)。该目录对应 2026-09-30 的原始 v1.1 键鼠优化版本，应用内部版本号仍为 1.1.0，界面名称仍为“图注工坊”。本次补齐源码与 Release 分发入口，不改变原始程序包或项目格式。
-
-安装 Node.js 22.12+ 与 npm 后，在该目录执行：
+完整源码与发布包逐文件对应，位于 [source/editions/v2.1-webui/](source/editions/v2.1-webui/)，包含前端、服务端、CLI、测试、SVG、字体、示例和启动脚本。Git clone 或“Code → Download ZIP”后，在此子目录执行：
 
 ```powershell
-cd source/editions/v1.1-webui
+cd source/editions/v2.1-webui
 npm ci
 npm run build
 npm start
 ```
 
-默认访问 `http://127.0.0.1:4317/`。源码含模型与渲染测试，可运行 `npm test`；键鼠交互回归入口为 `npm run verify`。安装与构建会生成本机依赖和 dist，不包含在原始轻量 ZIP 中。个人 data/projects/、草稿和日志不应随源码提交。
+验证命令为 `npm test`、`npm run verify` 和 `npm run verify:v1`。首次构建会生成 node_modules 与 dist，仓库和轻量发布包不包含这些本机生成内容。普通使用建议直接下载 Release 的 Assets 程序 ZIP；GitHub 自动附带的 Source code ZIP/TAR 是仓库快照，启动文件位于上述子目录。
 
-发布包为 **16,759,110 字节**，SHA-256 为 `db00609b09836354818002df662c5cc98735f5f7fcfd08a9838cc9b50117552a`，与仓库内历史 ZIP 相同。[发布说明](V1.1-WEBUI-RELEASE.md)区分原版本验证记录与本次发布校验。
+程序 ZIP 为 17,065,077 字节，SHA-256：
 
-## 文档与源码
+```text
+707aadcefcbc91dda79a1da3706dcdb418b668b171a74df3b7ccfeafe641c2de
+```
 
-- [Windows 操作指南](USAGE.md)：保留两个 Windows 版本的下载、安装、操作与迁移。
-- [Mac WebUI 操作指南](MACWEB-USAGE.md)：首启、快捷键、退出、目录与 CLI。
-- [Mac 后续验证清单](MACWEB-TESTING.md)：供用户自行验证；本次未执行。
-- [v1.1 WebUI 完整指南](USAGE-v1.1.md)：保留原网页版本的详细操作与常见问题。
-- [Codex 协作指南](CODEX_GUIDE.md)：分别说明 WebUI 与桌面版 CLI 和数据目录。
-- [v1.1 WebUI 完整协作指南](CODEX_GUIDE-v1.1.md)：源码 CLI、坐标与修订冲突说明。
-- [版本记录](CHANGELOG.md)：三个版本的功能、交付方式与开发状态。
-- [v1.1-p 实现与验收记录](V1.1-P-REPORT.md)：桌面版实测结果及尚未覆盖的验证分支。
+可通过 `Get-FileHash .\Bio-Picture-Editor-v2.1-webui.zip -Algorithm SHA256` 校验。
 
-v1.1 WebUI 完整源码已展开到 [source/editions/v1.1-webui/](source/editions/v1.1-webui/)，与原始程序 ZIP 对应，包含前端、服务、CLI、测试、字体和示例，按该目录内的 Setup.cmd 流程构建。v1.1-p 桌面包提供 EXE 与使用资源，完整桌面开发源码尚未同步至仓库；桌面构建流程见随包 DESKTOP-BUILD.md。v1.1-macweb 通过 Release 提供已构建 WebUI 及 darwin-arm64 组件，其完整开发源码尚未同步到仓库。仓库中的 Bio-Picture-Editor.zip 对应更早版本，仍作为历史文件保留。
+## 与 ChatGPT / Codex 协作
 
-## 支持范围与许可
+支持“ChatGPT 对话规划 → Codex 本地执行 → 编辑器复核”：讨论标注名称、文字、位置和样式后，由可访问本地项目的 Codex 读取摘要、标注 ID 与像素坐标，通过 CLI 修改项目、生成预览，再在编辑器中检查。外部修改使用修订号校验，避免覆盖未保存内容。
 
-暂不支持 TIFF、DICOM、全切片、多通道、高位深图片、比例尺测量或自动识别。图片和输出最多 6400 万像素、输出单边最多 16384 px，实际能力取决于内存；2× / 4× 放大不会增加照片本身的细节。
+程序没有内置聊天面板或自动调用模型。图片是否发送给模型由你选择的对话与工具操作决定；云端对话不能直接读取本地文件或 localhost。命令和项目交接方法见 [Codex 协作指南](CODEX_GUIDE.md)。
 
-第三方组件、字体与示例保留各自许可，见程序包中的 THIRD-PARTY-NOTICES.txt 和随包许可文件。本项目整体软件许可证尚未指定。
+## 验证与支持范围
 
+2026-10-03 在本机 Windows/Edge 完成 TypeScript/Vite 构建、24 项逻辑与 PNG 测试、17 组新版交互和 7 组旧键鼠回归，页面脚本错误为 0；发布包首次 Setup、后台启动、保存导出及停止脚本通过。详细范围与尚未覆盖环境见 [验证记录](source/editions/v2.1-webui/VERIFICATION.md)。
+
+当前支持普通 8 位 PNG/JPEG。暂不支持 TIFF、DICOM、全切片、多通道、高位深、比例尺测量、自动识别、多图拼版或批量导出。图片和导出最多 6400 万像素、单边最多 16384 px，实际能力取决于内存。
+
+## 文档与项目历史
+
+- [操作指南](USAGE.md)：安装、标注、局部放大、保存与导出。
+- [Codex 协作指南](CODEX_GUIDE.md)：CLI、项目坐标与修订冲突。
+- [v2.1 发布说明](V2.1-WEBUI-RELEASE.md)与[版本记录](CHANGELOG.md)：本次改进和发布过程。
+- [项目发展历史](HISTORY.md)：v1.1 键鼠优化、桌面版、Mac 开发版以及 v2.0/v2.1 WebUI 的演进与历史入口。
+
+v1.1 WebUI 不再作为首页并行主版本展示，其代码和原始程序包可从 Git 提交历史获取。已发布的 v1.1-p Windows EXE 仍可在历史 Releases 下载；Mac v1.1-macweb 仍为未测试 Pre-release，Windows 验证结果不代表 Mac 验证结果。
+
+第三方组件、字体与示例保留各自许可，见 [第三方说明](THIRD-PARTY-NOTICES.txt)及源码内许可文件。本项目整体软件许可证尚未指定。
