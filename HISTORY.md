@@ -1,6 +1,6 @@
 # 项目发展历史
 
-当前主版本为 [v2.1-webui](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui)，完整源码在 [source/editions/v2.1-webui/](source/editions/v2.1-webui/)。早期版本只用于了解项目演进和历史复现。
+当前并行版本为 [v2.1-webui](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui) 与 [v2.1-p](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-p)，分别提供浏览器和桌面窗口方式；源码按版本独立保存。早期版本用于了解项目演进和历史复现。
 
 | 时间 | 阶段 | 主要变化与历史入口 |
 | --- | --- | --- |
@@ -10,6 +10,8 @@
 | 2026-10-02 | v1.1-macweb | 移植 Apple Silicon Mac WebUI，适配 Command 快捷键与启动脚本。[历史 Pre-release](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-macweb)未进行运行或 Mac 实机测试 |
 | 2026-10-02 | v2.0-webui | 保留 WebUI，更新名称、主题 SVG 与工具图标，修复颜色控件整行重复触发，新增圆形局部放大；作为 v2.1 的前一阶段保留在本地开发历史 |
 | 2026-10-03 | v2.1-webui | 改善工具图标、只读原图查看、局部放大移动与四周留白，增加三个部位的独立线条样式；发布完整 WebUI 源码、轻量 ZIP 与 SHA-256 |
+
+| 2026-10-03 | v2.1-p | 封装 v2.1-webui 为 Windows EXE，自动初始化依赖，保留同名图标和编辑功能；与 WebUI 并行发布 ZIP、SHA-256 和独立源码 |
 
 旧版数据不自动迁移到新版草稿库。需要继续编辑时，先在旧版逐张保存并导出 .biozip，再在 v2.1 导入。新版独立样式需要 v2.1 或更新版本读取。
 
