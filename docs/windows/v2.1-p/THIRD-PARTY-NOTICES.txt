@@ -1,0 +1,15 @@
+生物图片编辑器 v2.1-p — Third-party notices
+
+This program embeds a pre-built React/TypeScript/Vite interface and production Node modules. Runtime dependencies include Express, Sharp/libvips, @napi-rs/canvas/Skia, fflate and Zod. Their package.json, license and notice files are preserved in the embedded installation payload; exact versions are listed in BUILD-MANIFEST.json. Source dependency versions remain locked by package-lock.json.
+
+Microsoft WebView2 SDK 1.0.3537.50 (Core, WinForms, native Loader) is redistributed with this launcher. See WEBVIEW2-LICENSE.txt and WEBVIEW2-NOTICE.txt. The Evergreen Runtime is detected on the user's computer and, only when missing, downloaded from Microsoft and installed under Microsoft's terms.
+
+The EXE does not embed a Node.js runtime. It copies a compatible local installation into its private runtime directory or downloads the pinned Node.js 22.23.3 archive from nodejs.org after checking SHA-256. See NODE-LICENSE.txt. The official downloaded archive includes Node.js and bundled third-party notices under that license.
+
+Noto Sans CJK Simplified Chinese font: FONT-LICENSE.txt in the release package; public/fonts/LICENSE.txt in source; dist/fonts/LICENSE.txt in the installed payload. The font is provided for offline Chinese display and image export.
+
+Example image/project: IMAGE-LICENSE.md in the release package and examples/IMAGE-LICENSE.md in source. The example is an artificial test image.
+
+Application icon: original SVG source at assets/app-icon.svg; PNG and multi-resolution ICO are rendered from the SVG during the build.
+
+The project has not yet specified an overall software license. These notices preserve the separate licenses of third-party components and assets.
