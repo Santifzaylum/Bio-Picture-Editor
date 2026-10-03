@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.build/
+data/
+tests/*-results.json
+tests/*-server-data/
+tests/*-storage/
+tests/storage/
+tests/*.png
