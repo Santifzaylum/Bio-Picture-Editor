@@ -1,7 +1,0 @@
-node_modules/
-dist/
-data/
-release-*/
-tests/storage/
-tests/outside-storage/
-*.log
