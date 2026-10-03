@@ -1,5 +1,10 @@
 # 版本记录
 
+## v1.1-WebUI 发布渠道与源码补齐 · 2026-10-03
+
+将 2026-09-30 的原始 v1.1 键鼠优化版源码展开到 source/editions/v1.1-webui/，新增 v1.1-webui 标签与独立 Release，提供原始 ZIP 和 SHA-256 校验文件；README 补充源码开发与下载入口。应用内部版本号仍为 1.1.0，原包、项目格式及历史版本保持。现有 v1.1-p Latest 与 Mac 未测试 Pre-release 状态保留。
+
+
 ## v1.1-macweb · 开发版本，未进行测试（2026-10-02）
 
 新增面向 macOS 14+、Apple Silicon M 系列的本地浏览器 WebUI 移植版本，与原有 v1.1 Windows WebUI、v1.1-p Windows EXE 并行提供，保留原有包和下载入口。
@@ -37,3 +42,4 @@
 ## v1.0 · 2026-09-30
 
 支持 PNG/JPEG、多图片标签页、中文及几何标注、留白、项目保存与草稿恢复、原分辨率 PNG 导出和 Codex 本地协作。
+

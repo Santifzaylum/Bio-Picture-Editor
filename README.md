@@ -12,7 +12,7 @@
 | --- | --- | --- | --- |
 | 状态 | 原有发布版，继续保留 | 原有正式发布版，继续保留 | **开发版本，未进行测试；Pre-release** |
 | 系统 | Windows 10 / 11 x64 | Windows 10 1607+ / 11 x64，保留 .NET Framework 4.6.2+ | macOS 14+，仅 M 系列 / Apple Silicon arm64 |
-| 下载 | [v1.1 WebUI ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor-v1.1.zip) | [v1.1-p EXE ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) | [v1.1-macweb ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-macweb/Bio-Picture-Editor-v1.1-macweb-arm64.zip) |
+| 下载 | [v1.1 WebUI ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip) | [v1.1-p EXE ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-p/Bio-Picture-Editor-v1.1-p.zip) | [v1.1-macweb ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-macweb/Bio-Picture-Editor-v1.1-macweb-arm64.zip) |
 | 包体积 | 约 17 MB | 约 38.94 MiB（40.84 MB） | 约 34.92 MiB（36.61 MB） |
 | 首次准备 | 安装 Node.js 22.12+ 与 npm，再运行 Setup.cmd | 双击 EXE，自动检查并准备依赖 | 双击启动.command，自动下载校验独立 Node；字体及图片处理依赖随包提供 |
 | 日常启动 | 启动.vbs / Start.vbs，打开浏览器 | 生物图片编辑器.exe，打开桌面窗口 | 启动.command，打开默认浏览器 |
@@ -22,9 +22,9 @@
 
 原有两个版本面向 Windows；Mac WebUI 仅面向 Apple Silicon，不支持 Intel Mac。首次准备缺失环境需要联网，初始化后设计为可离线使用，Mac 实际行为尚未验证。v1.1 原包界面仍使用“图注工坊”，v1.1-p 与 v1.1-macweb 使用“生物图片编辑器”。
 
-## v1.1：浏览器 WebUI 使用方式
+## v1.1-WebUI：浏览器 WebUI 使用方式
 
-[下载 v1.1 WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/raw/refs/heads/main/Bio-Picture-Editor-v1.1.zip) · [完整 WebUI 操作指南](USAGE-v1.1.md) · [WebUI Codex 协作指南](CODEX_GUIDE-v1.1.md)
+[下载 v1.1 WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip) · [完整 WebUI 操作指南](USAGE-v1.1.md) · [WebUI Codex 协作指南](CODEX_GUIDE-v1.1.md) · [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v1.1-webui) · [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v1.1-webui/Bio-Picture-Editor-v1.1.zip.sha256)
 
 1. 下载并完整解压 Bio-Picture-Editor-v1.1.zip，保留整个程序文件夹。
 2. 从 [Node.js 官网](https://nodejs.org/)安装 Node.js 22.12 或更新版本，保留随附 npm；已有符合要求的环境可跳过。
@@ -32,7 +32,7 @@
 4. 日常双击 启动.vbs 或 Start.vbs，浏览器会自动打开本地编辑页面。默认地址为 `http://127.0.0.1:4317/`；端口冲突时启动器选择后续端口并更新 config.json。
 5. 使用结束前逐张保存或导出便携包，然后双击 停止.vbs 或 Stop.vbs，停止本地服务。仅关闭浏览器页面不会停止服务。
 
-系统禁用 VBS 时使用 Start.cmd / Stop.cmd。网页没有自动打开时，根据 config.json 中的 port 手动访问本地地址。此版本继续保留原有网页使用方式，无需改用 EXE。通过“Code → Download ZIP”下载的是仓库副本，需要继续解压其中的 Bio-Picture-Editor-v1.1.zip 才能找到启动文件。
+系统禁用 VBS 时使用 Start.cmd / Stop.cmd。网页没有自动打开时，根据 config.json 中的 port 手动访问本地地址。此版本继续保留原有网页使用方式，无需改用 EXE。通过“Code → Download ZIP”下载的是仓库快照；在其中的 source/editions/v1.1-webui/ 目录运行 Setup.cmd 与启动脚本。普通用户建议直接下载 Release 的程序 ZIP。
 
 ## v1.1-p：桌面 EXE 使用方式
 
@@ -99,6 +99,23 @@ Mac 版沿用项目与 .biozip 格式，跨平台交换已保存项目的实际�
 
 WebUI 版可以继续独立使用；切换到桌面版由用户自行选择。桌面版替换 EXE 升级不会主动删除项目或草稿。
 
+## v1.1-WebUI 源码与开发
+
+完整源码位于 [source/editions/v1.1-webui/](source/editions/v1.1-webui/)。该目录对应 2026-09-30 的原始 v1.1 键鼠优化版本，应用内部版本号仍为 1.1.0，界面名称仍为“图注工坊”。本次补齐源码与 Release 分发入口，不改变原始程序包或项目格式。
+
+安装 Node.js 22.12+ 与 npm 后，在该目录执行：
+
+```powershell
+cd source/editions/v1.1-webui
+npm ci
+npm run build
+npm start
+```
+
+默认访问 `http://127.0.0.1:4317/`。源码含模型与渲染测试，可运行 `npm test`；键鼠交互回归入口为 `npm run verify`。安装与构建会生成本机依赖和 dist，不包含在原始轻量 ZIP 中。个人 data/projects/、草稿和日志不应随源码提交。
+
+发布包为 **16,759,110 字节**，SHA-256 为 `db00609b09836354818002df662c5cc98735f5f7fcfd08a9838cc9b50117552a`，与仓库内历史 ZIP 相同。[发布说明](V1.1-WEBUI-RELEASE.md)区分原版本验证记录与本次发布校验。
+
 ## 文档与源码
 
 - [Windows 操作指南](USAGE.md)：保留两个 Windows 版本的下载、安装、操作与迁移。
@@ -110,10 +127,11 @@ WebUI 版可以继续独立使用；切换到桌面版由用户自行选择。�
 - [版本记录](CHANGELOG.md)：三个版本的功能、交付方式与开发状态。
 - [v1.1-p 实现与验收记录](V1.1-P-REPORT.md)：桌面版实测结果及尚未覆盖的验证分支。
 
-v1.1 完整源码包含在 WebUI 程序 ZIP 中，可按原脚本流程构建。v1.1-p 桌面包提供 EXE 与使用资源，完整桌面开发源码尚未同步至仓库；桌面构建流程见随包 DESKTOP-BUILD.md。v1.1-macweb 通过 Release 提供已构建 WebUI 及 darwin-arm64 组件，其完整开发源码尚未同步到仓库。仓库中的 Bio-Picture-Editor.zip 对应更早版本，仍作为历史文件保留。
+v1.1 WebUI 完整源码已展开到 [source/editions/v1.1-webui/](source/editions/v1.1-webui/)，与原始程序 ZIP 对应，包含前端、服务、CLI、测试、字体和示例，按该目录内的 Setup.cmd 流程构建。v1.1-p 桌面包提供 EXE 与使用资源，完整桌面开发源码尚未同步至仓库；桌面构建流程见随包 DESKTOP-BUILD.md。v1.1-macweb 通过 Release 提供已构建 WebUI 及 darwin-arm64 组件，其完整开发源码尚未同步到仓库。仓库中的 Bio-Picture-Editor.zip 对应更早版本，仍作为历史文件保留。
 
 ## 支持范围与许可
 
 暂不支持 TIFF、DICOM、全切片、多通道、高位深图片、比例尺测量或自动识别。图片和输出最多 6400 万像素、输出单边最多 16384 px，实际能力取决于内存；2× / 4× 放大不会增加照片本身的细节。
 
 第三方组件、字体与示例保留各自许可，见程序包中的 THIRD-PARTY-NOTICES.txt 和随包许可文件。本项目整体软件许可证尚未指定。
+
