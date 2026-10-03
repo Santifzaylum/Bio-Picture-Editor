@@ -1,0 +1,385 @@
+{
+  "name": "生物图片编辑器",
+  "version": "2.1.0-webui",
+  "release": "v2.1-webui",
+  "date": "2026-10-03",
+  "basedOn": "v2.0-webui (2026-10-02)",
+  "target": "Windows x64 WebUI",
+  "entry": "启动.vbs",
+  "port": 4321,
+  "bundledNode": false,
+  "bundledDependencies": false,
+  "containsPersonalProjects": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 81,
+      "sha256": "32f1b7bf7fdebc1991cb8d5373e913025f98e80ba7190e24cab3d476eae8f188"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1227,
+      "sha256": "3cafcd4724dc7b292f8d0cfde0e3d52c34ce1ebd59f88fb96319f1a40b8035c1"
+    },
+    {
+      "path": "CODEX_GUIDE.md",
+      "bytes": 2042,
+      "sha256": "889984774a2d8e0ca4e69cb7c18db640992c1f118d6c61aa2ca3e2f2bdce4a18"
+    },
+    {
+      "path": "Codex-CLI.cmd",
+      "bytes": 180,
+      "sha256": "5c06443cdd6391f95b49276eef5b22e380001063a3cd73cf9e2dfdcf01eda362"
+    },
+    {
+      "path": "GUIDE.md",
+      "bytes": 2722,
+      "sha256": "83fadf35bbf44b6723da937db5b7e5c7c1a5b7fcabd131f5be3d364746b1b9ea"
+    },
+    {
+      "path": "PACKAGE-REPORT.md",
+      "bytes": 274,
+      "sha256": "c16d61a559658685d048086325df28f0e9d593f8e013bff4aabc86b627dfdae5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1692,
+      "sha256": "60ce992c128501ce9b4071d933cb4ce693b45a8b5e221a3a5f7c773d1f6e9930"
+    },
+    {
+      "path": "RELEASE-v2.1-webui.md",
+      "bytes": 1227,
+      "sha256": "3cafcd4724dc7b292f8d0cfde0e3d52c34ce1ebd59f88fb96319f1a40b8035c1"
+    },
+    {
+      "path": "Rebuild.cmd",
+      "bytes": 232,
+      "sha256": "36f40dec742dac37eb0fbc28f5041b5a53d95d92666719bdfa7647bfd4df0aef"
+    },
+    {
+      "path": "Setup.cmd",
+      "bytes": 854,
+      "sha256": "ce28beca7d83fc0a0cc50bacfa1a5969af5014fa20a03654ba67fb9f0fd28fdd"
+    },
+    {
+      "path": "Start.cmd",
+      "bytes": 141,
+      "sha256": "35716bfdd46e64fc48436c6ffdcf0575065a856d06ea361023547668e2fe34bd"
+    },
+    {
+      "path": "Start.vbs",
+      "bytes": 322,
+      "sha256": "da6a1a3df419c022fbf91ecb369e545bff0a7472b2b36a033a9b2c73d00a0d38"
+    },
+    {
+      "path": "Stop.cmd",
+      "bytes": 140,
+      "sha256": "554044f6f52ee9689c7a47b7e06f474a65a69d7494676ca47e50ce22b7739e84"
+    },
+    {
+      "path": "Stop.vbs",
+      "bytes": 321,
+      "sha256": "a14913fc8b233d76fb0482aef9a4ae73cd5c4d2f99b16866fad32c8c276bdc14"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 229,
+      "sha256": "aa34cc5b2b272137c1afad684bc6e055977747937718539661059d37f1f8dafa"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 7274,
+      "sha256": "bef9a91b3f6281430453b94f7da1b78f5ee552108059aa05c6c1824da24df78c"
+    },
+    {
+      "path": "V1.1-REPORT.md",
+      "bytes": 1314,
+      "sha256": "7ad592c2cb822effa6346280441dbe8a1a627835b73dddc93a9780b87d7cf99a"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "bytes": 1409,
+      "sha256": "412b43a9e3b8b16aa36f94e5a256f115720819e252f69a57add70efc5be57f4c"
+    },
+    {
+      "path": "config.json",
+      "bytes": 14,
+      "sha256": "04eaa045de1c4de61d16b297d2af8fd7ef3e735ffa0f6b0b387e1b09baafa34d"
+    },
+    {
+      "path": "data/README.txt",
+      "bytes": 156,
+      "sha256": "32c7c25d918ccf9f1d155589e9465c558a72ebb69dd3ad2e5158bb2be4cf11ea"
+    },
+    {
+      "path": "examples/IMAGE-LICENSE.md",
+      "bytes": 944,
+      "sha256": "a59a100218bd7039e35c4b337e157a4af8f0c09e88f2152f90bb770eaf3fb7fb"
+    },
+    {
+      "path": "examples/annotations.md",
+      "bytes": 1340,
+      "sha256": "b5af4e630193f015900bd9f7cd072651aa28eb84c103af2e53234c5754cc9235"
+    },
+    {
+      "path": "examples/editable/display.png",
+      "bytes": 78217,
+      "sha256": "a262626ea317908f171d029de35f5a16d64fbd11a3ca48fe603b31c5701050db"
+    },
+    {
+      "path": "examples/editable/original.png",
+      "bytes": 73614,
+      "sha256": "3d452727a1d237ab53f8b2853eefa5da2351d8d8e476624067afa5704ffda6a7"
+    },
+    {
+      "path": "examples/editable/project.json",
+      "bytes": 6411,
+      "sha256": "cb545da04710d13de67b13e6b9ecebf421e1c781a471c9611d06972e86039c8a"
+    },
+    {
+      "path": "examples/example-inline.json",
+      "bytes": 206761,
+      "sha256": "6a92af23b5c83a4c47722e4ed151fc6b99916c3080bc06ae2c6d12da65cbffac"
+    },
+    {
+      "path": "examples/example-v2.1.biozip",
+      "bytes": 123908,
+      "sha256": "325e37805f755649306340b8acaf20ae5e6ea9bb619f1979f372ab7a81933d93"
+    },
+    {
+      "path": "examples/example-v2.1.png",
+      "bytes": 114333,
+      "sha256": "de4087fde80b0044f133e292bb84a4b7d60a2066a275a9419d13a38c330325a4"
+    },
+    {
+      "path": "examples/example-v2.biozip",
+      "bytes": 123828,
+      "sha256": "29d92269b4af02553f682f59b78e65080330c48077a4871f854dcbb0381ed7ee"
+    },
+    {
+      "path": "examples/example-v2.png",
+      "bytes": 137506,
+      "sha256": "a4f24050ad49daa4aef9de5f2f33864a7851978360f92c562eed3d0a2984167a"
+    },
+    {
+      "path": "examples/example.biozip",
+      "bytes": 124253,
+      "sha256": "925446a9b9314602a230804cde8e9d560d5a0c8741f75acf137ab8f67dcafd40"
+    },
+    {
+      "path": "examples/example.png",
+      "bytes": 114349,
+      "sha256": "ccfa8911e7fce2ff5a65921650a17f1344c9f9e8e09b91950518dc8d8b117ce2"
+    },
+    {
+      "path": "examples/ordinary-photo.jpg",
+      "bytes": 95526,
+      "sha256": "5326b4806c44de04bc74beb05a9e8d339289cd49454c0341e192a06407097c26"
+    },
+    {
+      "path": "examples/ordinary-photo.png",
+      "bytes": 791555,
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+    },
+    {
+      "path": "examples/patch.json",
+      "bytes": 121,
+      "sha256": "3272fef6d81697e19a7e1c300e0eee67b557d4c2fb74e18b663b385fa9da17f6"
+    },
+    {
+      "path": "examples/test-1200x800.png",
+      "bytes": 73614,
+      "sha256": "3d452727a1d237ab53f8b2853eefa5da2351d8d8e476624067afa5704ffda6a7"
+    },
+    {
+      "path": "examples/test-6000x4000.png",
+      "bytes": 2155921,
+      "sha256": "56f6742adea1a285486c75bb28201f2cc2728d94d05f3a199b983beb1f7627f4"
+    },
+    {
+      "path": "index.html",
+      "bytes": 341,
+      "sha256": "dc5fa4dd13179bb89c8f647153dc0fa4b7ec18d9a9fc3f4a39f2ded804157123"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 106247,
+      "sha256": "a6f153ea74bfc2b65c32ed01aa2d9bf8906c13a0e05b2a00a3e4b76742b59a62"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1091,
+      "sha256": "cbf7584d154bc98b1d5ae5fc139d0653dff900e27ff8949b4b7729c5aefe118b"
+    },
+    {
+      "path": "public/app-icon.svg",
+      "bytes": 696,
+      "sha256": "5f7021a0c17361399c0421c33bc83ae309019d620a956f34db5883025677e092"
+    },
+    {
+      "path": "public/fonts/LICENSE.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "public/fonts/NotoSansCJKsc-Regular.otf",
+      "bytes": 16437364,
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+    },
+    {
+      "path": "scripts/package-webui.mjs",
+      "bytes": 3597,
+      "sha256": "219a628f2df2fdf58f47cbb0761b13e3d88cc4b2a9b3a456b353eb51bc4f7bc6"
+    },
+    {
+      "path": "scripts/start.ps1",
+      "bytes": 3742,
+      "sha256": "aec51d531b5f767d56b2c86edac803aa225f4814459d190416da22d8574db04d"
+    },
+    {
+      "path": "scripts/stop.ps1",
+      "bytes": 1226,
+      "sha256": "bd0ec35297c6b5259d848b1ffae1d1ea817997302aa3391bba6b2807342db1e0"
+    },
+    {
+      "path": "server/cli.ts",
+      "bytes": 2087,
+      "sha256": "e1047c3d7d832ecc1116cfe073aeb6ca2744a1b3a540fbad6dae343706c14ca9"
+    },
+    {
+      "path": "server/export.ts",
+      "bytes": 1318,
+      "sha256": "d725ae729e88164e03643791dd54358e24fcfa5e204db38242cf4d8433539be5"
+    },
+    {
+      "path": "server/index.ts",
+      "bytes": 6088,
+      "sha256": "1b412b18babb469a2269fc437cfac749231fe21f64b8daec61506e4b5a3bd7be"
+    },
+    {
+      "path": "server/storage.ts",
+      "bytes": 7057,
+      "sha256": "62db0aa687d652eed931ebb05f29465caeef87a8104a1be03301f70a56ecee7b"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 45423,
+      "sha256": "6dbe0ecbebd103018c121713797761078c8d4598feaef4f87f89585198f5cd84"
+    },
+    {
+      "path": "src/DetailProperties.tsx",
+      "bytes": 3979,
+      "sha256": "f1ab3776e348e662917058074147691aee34f19d35981a27aa3b23fc5cd98907"
+    },
+    {
+      "path": "src/ToolIcon.tsx",
+      "bytes": 917,
+      "sha256": "674896066bfabaa373655150bf8503c02c5b31eaded05cf4d0a3c074c53a7ca9"
+    },
+    {
+      "path": "src/api.ts",
+      "bytes": 2779,
+      "sha256": "061b02af11e4abbe5b4b22b169406f7e72389c10930f69dbeb3545ddeb3639e6"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 174,
+      "sha256": "65a08f6a2fe8f3a559024f22089d478118d12bfb9294641589abd10eaa738bdc"
+    },
+    {
+      "path": "src/model.ts",
+      "bytes": 9501,
+      "sha256": "2943dcd0d05a006c35de070b616610a290eb6b6f34681a1d806adc06892bef8d"
+    },
+    {
+      "path": "src/render.ts",
+      "bytes": 7702,
+      "sha256": "c038d8192eaa732c1298e0095a4785d0d4529edbde7d212cee255be3f4a3945a"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 10220,
+      "sha256": "7bd8bb17549caecd8dd3313a59ab0c29f3189974e2e16c07328cd8347f9590d2"
+    },
+    {
+      "path": "src/workspace.ts",
+      "bytes": 1156,
+      "sha256": "59943dad288ebd122a4aa8904366ccfdcb304e4f07680a8f8d28f34591ab0b1e"
+    },
+    {
+      "path": "tests/core.test.ts",
+      "bytes": 5494,
+      "sha256": "cd6267272af7fedabee82d5624deebb208d502372306101e8ab06dd5c6197a8c"
+    },
+    {
+      "path": "tests/detail-v21.test.ts",
+      "bytes": 5268,
+      "sha256": "44d3d181d7510f451f8c010a956c9fbe38756775ba76d7f4c010cada842cb047"
+    },
+    {
+      "path": "tests/detail.test.ts",
+      "bytes": 5013,
+      "sha256": "b8ce999199f5d771a57a22b8f6130d7dcf060dd710a121e3f28f1f61dbaa0315"
+    },
+    {
+      "path": "tests/interaction.test.ts",
+      "bytes": 4023,
+      "sha256": "7676aa4aea6de22bfcc2325dab04e6de553d83ce4927cd7245d05ba82bec1a32"
+    },
+    {
+      "path": "tests/v1.1-browser.mjs",
+      "bytes": 9101,
+      "sha256": "1478d5ac20131cc45da6bd1d69f053f0f17750011687398b6663c50f152d4d0b"
+    },
+    {
+      "path": "tests/v1.1-results.json",
+      "bytes": 1004,
+      "sha256": "41614de6e6cdbeaed7f2866e6581a5869a3001fa3aad0b3848f86ceddfab2846"
+    },
+    {
+      "path": "tests/v2-browser.mjs",
+      "bytes": 20319,
+      "sha256": "c3a7cb5c2a3029d971dd6e81d8860fcb1782913ac8d3227fdafa711f5225caba"
+    },
+    {
+      "path": "tests/v2-results.json",
+      "bytes": 2202,
+      "sha256": "18f0a72bfa14c5c6cfcc6e46e42f67184f3ac59f8f6f0f852487ffcba59157e2"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 300,
+      "sha256": "b6095215990c57a121f933d512e874acdb5aba0f38e2f43818dd7dacfa556b06"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 101,
+      "sha256": "0d73a04f68b3d0e2b8942df60684e26efc465e8b98b2ddadb775f0adb95c02b5"
+    },
+    {
+      "path": "停止.vbs",
+      "bytes": 321,
+      "sha256": "a14913fc8b233d76fb0482aef9a4ae73cd5c4d2f99b16866fad32c8c276bdc14"
+    },
+    {
+      "path": "先看这里-操作指南.html",
+      "bytes": 7741,
+      "sha256": "e6784925dfd791563e9e8e14db0985b9aa8981885ba6d3cdc083e97007f8f6eb"
+    },
+    {
+      "path": "先看这里-操作指南.txt",
+      "bytes": 7274,
+      "sha256": "bef9a91b3f6281430453b94f7da1b78f5ee552108059aa05c6c1824da24df78c"
+    },
+    {
+      "path": "启动.vbs",
+      "bytes": 322,
+      "sha256": "da6a1a3df419c022fbf91ecb369e545bff0a7472b2b36a033a9b2c73d00a0d38"
+    },
+    {
+      "path": "操作指南.md",
+      "bytes": 7274,
+      "sha256": "bef9a91b3f6281430453b94f7da1b78f5ee552108059aa05c6c1824da24df78c"
+    }
+  ]
+}
