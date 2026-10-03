@@ -2,7 +2,7 @@
 
 在 Windows 本机运行的生物医学图片标注编辑器。保留浏览器 WebUI，支持中文文字、箭头、关联引线、直线、矩形、椭圆、圆形局部放大、多图片标签页、可继续编辑的项目与 PNG 导出。图片在本机处理，编辑器不会自动上传图片。
 
-**当前主版本为 v2.1-webui。** 下载 [Windows WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip)，查看 [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui) 或 [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip.sha256)。本包约 16.28 MiB，采用网页方式运行，不包含 EXE、Node.js 或预装依赖。
+**当前主版本为 v2.1-webui。** 下载 [Windows WebUI 程序包](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip)，查看 [Release 发布说明](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui) 或 [SHA-256 校验文件](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip.sha256)。本包约 16.27 MiB，采用网页方式运行，不包含 EXE、Node.js 或预装依赖。
 
 ## 安装、启动与退出
 
