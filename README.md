@@ -1,8 +1,10 @@
-# 生物图片编辑器 · v2.1-webui / v2.1-p
+# 生物图片编辑器 · v2.1-webui / v2.1-p / v2.1-macweb
 
 在 Windows 本机运行的生物医学图片标注编辑器。保留浏览器 WebUI，支持中文文字、箭头、关联引线、直线、矩形、椭圆、圆形局部放大、多图片标签页、可继续编辑的项目与 PNG 导出。图片在本机处理，编辑器不会自动上传图片。
 
 **v2.1-webui 与 v2.1-p 并行提供。** 两版采用同一套 v2.1 编辑界面、名称、主题图标与项目格式，区别在于运行和初始化方式；v2.1-p 将网页封装在 Windows 桌面窗口中，不取代浏览器版。
+
+新增 **v2.1-macweb · macOS 浏览器版**，与上述两种 Windows 版本并行提供，保留 v2.1 的编辑功能、界面与项目格式。仅支持 M 系列 Mac、macOS 14+，首次启动自动准备独立运行时。**当前为未测试的开发版本，以 Pre-release 分发。**
 
 ## 选择版本与下载
 
@@ -10,6 +12,7 @@
 | --- | --- | --- |
 | **v2.1-p · Windows 桌面 EXE** | 双击 EXE，首次自动准备依赖；适合希望直接使用桌面窗口的用户。约 38.94 MiB | [程序 ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-p/Bio-Picture-Editor-v2.1-p.zip) · [Release](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-p) · [SHA-256](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-p/Bio-Picture-Editor-v2.1-p.zip.sha256) · [操作指南](docs/windows/v2.1-p/USAGE.md) |
 | **v2.1-webui · Windows 浏览器版** | 手动安装 Node.js，首次 Setup；在 Edge/Chrome 浏览器中编辑。约 16.27 MiB | [程序 ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip) · [Release](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-webui) · [SHA-256](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-webui/Bio-Picture-Editor-v2.1-webui.zip.sha256) · [操作指南](source/editions/v2.1-webui/USAGE.md) |
+| **v2.1-macweb · macOS 浏览器版（预发布）** | M 系列 Mac、macOS 14+；双击启动.command，首次自动下载并校验 Node；在默认浏览器中编辑，无需 npm、Xcode 或编译 .app。约 35.67 MiB；开发版，未测试 | [程序 ZIP](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-macweb/Bio-Picture-Editor-v2.1-macweb-arm64.zip) · [Pre-release](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-macweb) · [SHA-256](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.1-macweb/Bio-Picture-Editor-v2.1-macweb-arm64.zip.sha256)；操作指南和手动测试清单随包提供 |
 
 请选择 Release 的 **Assets 程序 ZIP** 并完整解压。GitHub 自动生成的 Source code ZIP/TAR 是开发源码快照，不是打包好的 EXE 程序。
 
@@ -30,6 +33,17 @@
 4. 使用结束前逐张保存或导出 .biozip，再运行 **停止.vbs / Stop.vbs**。仅关闭网页不会停止后台服务；系统禁用 VBS 时使用 Start.cmd / Stop.cmd。
 
 WebUI 包不附带 EXE、Node.js 或预装依赖。建议解压到普通可写目录，项目位于该目录的 `data/projects/`，草稿依赖所用浏览器、网址和端口。详细操作见 [WebUI 操作指南](source/editions/v2.1-webui/USAGE.md)。
+
+## v2.1-macweb：安装、启动与退出（预发布）
+
+1. 使用 M 系列 Mac、macOS 14 或更新版本，完整解压 **Bio-Picture-Editor-v2.1-macweb-arm64.zip**，双击 **启动.command**。请保留整个目录中的 core、launcher 和 release-manifest.json。
+2. 首次联网自动下载锁定的官方 Node.js 22.23.3 darwin-arm64 运行时，并校验压缩包及二进制。Mac 图片处理组件、编辑页面、中文字体和 v2.1 示例项目已经随包提供；无需手动安装系统 Node.js、npm、Xcode 或在 Mac 上编译。
+3. 准备完成后自动打开默认浏览器，后续复用独立运行环境，核心编辑可离线使用。Command+点击多选，Command+S 保存，Command+Z / Command+Shift+Z 撤销与重做，Delete（Backspace）删除，Option+拖动关联标注或局部放大整组。保留原图只读、放大三处独立线条样式、统一四周留白和原分辨率 PNG 导出。
+4. 结束前逐张保存或导出 .biozip，再点击网页 **退出程序**，保存当前窗口全部图片标签页草稿并停止服务。也可先在所有页面保存，再运行 **停止.command**。仅关闭网页不会停止后台服务；PNG 和便携包的保存位置由浏览器下载设置决定。
+
+数据独立保存在 `~/Library/Application Support/Bio-Picture-Editor/v2.1-macweb/`，默认首次从 4322 起选择空闲端口，后续沿用固定端口。三个 v2.1 版本可通过 .biozip 迁移已保存项目，不自动共享草稿；旧版 Mac 数据目录继续保留。随包 **先看这里-操作指南.html / .md** 提供完整操作与排错说明，**Mac验证清单.md** 提供后续人工验证步骤，**Codex协作指南.md** 说明 CLI。
+
+**本版只完成代码移植、编译和打包，未运行本地或 Mac 测试。** 下载后的脚本可能需要系统允许打开；权限异常时可在解压目录运行 `bash ./启动.command`。Mac 运行、浏览器和图片输出仍待后续验证，Windows 版既有验证记录不代表 Mac 验收结果。
 
 ## 两版通用的简要操作
 
