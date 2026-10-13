@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "sha256": "62b631e5d22ebf2bc4c5ef96e2b2e76ee3ef5dc397dae0d2897f1489a8468f8b",
+  "results": [
+    {
+      "name": "ZIP 解压、根目录精简与全部文件 SHA-256 验证",
+      "passed": true,
+      "files": 91
+    },
+    {
+      "name": "中文和空格路径下，根目录首次初始化入口安装依赖并构建成功",
+      "passed": true
+    },
+    {
+      "name": "根目录启动.vbs 启动整理后的程序目录",
+      "passed": true,
+      "release": "v2.2.1-webui",
+      "port": 4324
+    },
+    {
+      "name": "实际发布包可以打开新示例、读取比例、保存项目并导出 PNG",
+      "passed": true
+    },
+    {
+      "name": "根目录离线指南完整覆盖基础操作与新测量，页面可读且无横向溢出",
+      "passed": true
+    },
+    {
+      "name": "根目录停止.vbs 停止正确服务",
+      "passed": true
+    },
+    {
+      "name": "再次启动与重开保留项目，停止入口可重复使用",
+      "passed": true
+    }
+  ]
+}
