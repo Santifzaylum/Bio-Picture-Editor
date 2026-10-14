@@ -1,6 +1,9 @@
 # 项目发展历史
 
-当前并行提供 [v2.2.1-webui Windows 浏览器版](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-webui)、[v2.1-p Windows EXE](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-p) 和 [v2.1-macweb macOS 浏览器预发布](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-macweb)。最新正式 Release 为 v2.2.1-webui，新增长度/比例测量；EXE 和 Mac 原版本继续提供。源码按版本独立保存。
+2026-10-14：发布 v2.2.1-p Windows EXE，完整继承 v2.2.1-webui，采用独立数据目录和自动依赖初始化。v2.2.1-webui 继续保持 Latest。Mac 版因缺乏实际测试暂停更新，保留 v2.1-macweb 开发版及历史下载。
+
+
+当前并行提供 [v2.2.1-webui Windows 浏览器版](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-webui)、[v2.2.1-p Windows EXE](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-p) 和 [v2.1-macweb macOS 浏览器预发布](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-macweb)。最新正式 Release 为 v2.2.1-webui；Windows EXE 同步 v2.2.1 的长度、比例与标定功能。Mac 版因缺乏测试暂停更新，保留现有开发版。源码按版本独立保存。
 
 | 时间 | 阶段 | 主要变化与历史入口 |
 | --- | --- | --- |
@@ -19,4 +22,4 @@
 历史桌面版的操作与协作说明见 [旧版操作指南](docs/history/v1.1-p/USAGE.md)和[旧版 Codex 指南](docs/history/v1.1-p/CODEX_GUIDE.md)。Mac 开发版仍保留 [操作指南](MACWEB-USAGE.md)与[验证清单](MACWEB-TESTING.md)，其中未测试状态保持。
 
 
-新版 v4 项目需要 v2.2.1 或更新版本，旧 EXE/Mac 不直接读取含新测量的项目；迁移请保留旧 .biozip。
+新版 v4 项目需要 v2.2.1 或更新版本，旧 v2.1-p/Mac 不直接读取含新测量的项目；迁移请保留旧 .biozip。

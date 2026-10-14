@@ -1,0 +1,5 @@
+import {spawn} from 'node:child_process';import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';import {chromium} from 'playwright';
+const profile=path.resolve(process.argv[2]||'../../../validation/v2.2.1-p/profiles/桌面 最终验收'),port=process.argv[3]||'9472',exe=path.resolve('../../../releases/windows/v2.2.1-p/Bio-Picture-Editor-v2.2.1-p/生物图片编辑器.exe');
+const child=spawn(exe,['--profile',profile,'--diagnostic-port',port],{windowsHide:true,stdio:'ignore'});child.unref();
+for(let n=0;n<200;n++){if(child.exitCode!==null)throw Error('Desktop exited '+child.exitCode);try{const r=await fetch('http://127.0.0.1:'+port+'/json/list');if(r.ok){const pages=await r.json();if(pages.some(p=>p.url.includes('127.0.0.1:')))break;}}catch{}await new Promise(r=>setTimeout(r,150));}
+const browser=await chromium.connectOverCDP('http://127.0.0.1:'+port);const page=browser.contexts().flatMap(c=>c.pages()).find(p=>p.url().startsWith('http://127.0.0.1:'));assert.ok(page);await page.waitForFunction(()=>!document.querySelector('input[type=file]').disabled);await browser.close();console.log(JSON.stringify({pid:child.pid,profile,port}));

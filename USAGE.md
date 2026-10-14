@@ -1,4 +1,24 @@
-# 生物图片编辑器 v2.2.1-webui 操作指南
+# 生物图片编辑器操作指南
+
+## 选择运行方式
+
+Windows 浏览器版 **v2.2.1-webui** 继续作为最新正式 Release；Windows 桌面 **v2.2.1-p** 提供同一套编辑及测量功能，双击 EXE 自动准备依赖。macOS **v2.1-macweb** 因缺乏实际 Mac 测试，目前暂停更新，仍保留未测试 Pre-release。
+
+| 方式 | 首次运行 | 完整指南 |
+| --- | --- | --- |
+| Windows EXE v2.2.1-p | 完整解压后双击生物图片编辑器.exe，缺少依赖时自动下载安装 | [桌面完整使用指南](docs/windows/v2.2.1-p/USAGE.md) |
+| Windows WebUI v2.2.1-webui（Latest） | 安装 Node.js 22.12+（含 npm），运行首次初始化.cmd，以后使用启动.vbs | [浏览器完整使用指南](docs/windows/v2.2.1-webui/USAGE.md) |
+| macOS v2.1-macweb（暂停更新） | 保留现有开发版启动.command 方法，运行与导出仍待 Mac 实测 | [Mac 使用说明](docs/macos/v2.1-macweb/README.md) |
+
+## Windows 桌面 EXE：从首次启动到保存
+
+解压 v2.2.1-p 后双击 EXE，等待初始化完成。无需手动安装 Node、运行 npm 或 Setup；缺少依赖时需要联网。进入窗口后打开 PNG/JPEG 或 .biozip，使用原有标注、局部放大或 Q 长度测量，完成后逐张保存项目，并导出 .biozip 备份或 PNG 成图。关闭桌面窗口会保存草稿并停止自己的本地服务。
+
+根目录提供 EXE、使用指南.html、README.txt 和文档。桌面数据位于 `%LOCALAPPDATA%\Bio-Picture-Editor\v2.2.1-p\`；移动程序不会自动移动数据。v2.2.1-p 与 v2.2.1-webui 通过 .biozip 互通新测量及标定，旧 v2.1-p/Mac 版不能读取 v4 项目。后续 Windows 原生保存对话框的交互检查由用户自行完成。
+
+## Windows 浏览器版完整操作
+
+以下正文按 v2.2.1-webui 的目录、初始化和退出方式编写；桌面版的目录及启动差异见上方桌面指南。
 
 本版为 Windows 10/11 x64 本地浏览器版。保留原有标注工作流，新增通用长度测量、比例参考、分组和尺度标定。完整解压程序包，在普通可写目录使用。
 

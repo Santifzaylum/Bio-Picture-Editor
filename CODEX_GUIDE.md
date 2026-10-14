@@ -1,4 +1,6 @@
-# v2.2.1-webui 与 Codex 协作
+# Codex 协作指南入口
+
+Windows 桌面 v2.2.1-p 使用随包“文档/desktop-cli.ps1”或 Codex-CLI.cmd，见 [桌面协作指南](docs/windows/v2.2.1-p/CODEX_GUIDE.md)。Windows WebUI v2.2.1 见 [浏览器协作指南](docs/windows/v2.2.1-webui/CODEX_GUIDE.md)。Mac 版因缺乏测试，目前暂停更新。
 
 先启动服务并保存项目，在程序目录运行命令。CLI 与界面必须使用同一 data 目录。
 
