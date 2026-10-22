@@ -3,10 +3,11 @@
 2026-10-14：发布 v2.2.1-p Windows EXE，完整继承 v2.2.1-webui，采用独立数据目录和自动依赖初始化。v2.2.1-webui 继续保持 Latest。Mac 版因缺乏实际测试暂停更新，保留 v2.1-macweb 开发版及历史下载。
 
 
-当前并行提供 [v2.2.1-webui Windows 浏览器版](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-webui)、[v2.2.1-p Windows EXE](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-p) 和 [v2.1-macweb macOS 浏览器预发布](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-macweb)。最新正式 Release 为 v2.2.1-webui；Windows EXE 同步 v2.2.1 的长度、比例与标定功能。Mac 版因缺乏测试暂停更新，保留现有开发版。源码按版本独立保存。
+当前并行提供 [v2.3-webui Windows 浏览器版](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.3-webui)、[v2.2.1-p Windows EXE](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.2.1-p) 和 [v2.1-macweb macOS 浏览器预发布](https://github.com/Santifzaylum/Bio-Picture-Editor/releases/tag/v2.1-macweb)。最新正式 Release 为 v2.3-webui，修复箭头绘制并改进属性栏与标注管理；Windows EXE 保留 v2.2.1 功能，Mac 版因缺乏测试暂停更新。源码按版本独立保存。
 
 | 时间 | 阶段 | 主要变化与历史入口 |
 | --- | --- | --- |
+| 2026-10-22 | v2.3-webui | 箭头尖端修复、控制点绘制隔离、属性分区、搜索/筛选/分页、左右对称留白与保存时机修正；保留 v1–v4 项目格式 |
 | 2026-10-13 | v2.2.1-webui | 通用独立长度、比例参考复用、分组、尺度标定、全精度数据导出、标签显隐修正及发布包/指南整理；采用 v4 新测量格式 |
 | 2026-09-30 | v1.0 | 本地图片标注、文字和图形、多图片标签页、项目保存、便携包、PNG 导出和本地 CLI |
 | 2026-09-30 | v1.1 WebUI | 优化选择工具的自动抓手平移、Ctrl 多选和键鼠操作；界面原称“图注工坊”。[原始仓库快照](https://github.com/Santifzaylum/Bio-Picture-Editor/tree/c6182e6c0a5d5828c5f87a62c5aafef28225804a)内保留原始 ZIP 与操作指南；不再新增独立 v1.1-webui Release |

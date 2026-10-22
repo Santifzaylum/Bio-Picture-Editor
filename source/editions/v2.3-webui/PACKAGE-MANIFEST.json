@@ -1,0 +1,484 @@
+{
+  "name": "生物图片编辑器",
+  "version": "2.3-webui",
+  "release": "v2.3-webui",
+  "date": "2026-10-22",
+  "basedOn": "v2.2.1-webui",
+  "target": "Windows x64 WebUI",
+  "entry": "启动.vbs",
+  "setup": "首次初始化.cmd",
+  "guide": "使用指南.html",
+  "programDirectory": "程序",
+  "documentationDirectory": "文档",
+  "port": 4324,
+  "bundledNode": false,
+  "bundledDependencies": false,
+  "containsPersonalProjects": false,
+  "files": [
+    {
+      "path": "程序/.gitignore",
+      "bytes": 81,
+      "sha256": "32f1b7bf7fdebc1991cb8d5373e913025f98e80ba7190e24cab3d476eae8f188"
+    },
+    {
+      "path": "程序/Codex-CLI.cmd",
+      "bytes": 180,
+      "sha256": "5c06443cdd6391f95b49276eef5b22e380001063a3cd73cf9e2dfdcf01eda362"
+    },
+    {
+      "path": "程序/Rebuild.cmd",
+      "bytes": 232,
+      "sha256": "36f40dec742dac37eb0fbc28f5041b5a53d95d92666719bdfa7647bfd4df0aef"
+    },
+    {
+      "path": "程序/Setup.cmd",
+      "bytes": 876,
+      "sha256": "fc6d90f424af84805efde04bd086c188bdd8bb19554d4ac66363dd9c286d92e5"
+    },
+    {
+      "path": "程序/Start.cmd",
+      "bytes": 141,
+      "sha256": "35716bfdd46e64fc48436c6ffdcf0575065a856d06ea361023547668e2fe34bd"
+    },
+    {
+      "path": "程序/Start.vbs",
+      "bytes": 322,
+      "sha256": "da6a1a3df419c022fbf91ecb369e545bff0a7472b2b36a033a9b2c73d00a0d38"
+    },
+    {
+      "path": "程序/Stop.cmd",
+      "bytes": 140,
+      "sha256": "554044f6f52ee9689c7a47b7e06f474a65a69d7494676ca47e50ce22b7739e84"
+    },
+    {
+      "path": "程序/Stop.vbs",
+      "bytes": 321,
+      "sha256": "a14913fc8b233d76fb0482aef9a4ae73cd5c4d2f99b16866fad32c8c276bdc14"
+    },
+    {
+      "path": "程序/config.json",
+      "bytes": 14,
+      "sha256": "7e67e7fa58d12029e2fac3b7e2ad3e8bcd7d9eb4db0ed5dcf43eb70ddea05344"
+    },
+    {
+      "path": "程序/data/README.txt",
+      "bytes": 156,
+      "sha256": "32c7c25d918ccf9f1d155589e9465c558a72ebb69dd3ad2e5158bb2be4cf11ea"
+    },
+    {
+      "path": "程序/examples/IMAGE-LICENSE.md",
+      "bytes": 944,
+      "sha256": "a59a100218bd7039e35c4b337e157a4af8f0c09e88f2152f90bb770eaf3fb7fb"
+    },
+    {
+      "path": "程序/examples/annotations.md",
+      "bytes": 1340,
+      "sha256": "b5af4e630193f015900bd9f7cd072651aa28eb84c103af2e53234c5754cc9235"
+    },
+    {
+      "path": "程序/examples/editable/display.png",
+      "bytes": 78217,
+      "sha256": "a262626ea317908f171d029de35f5a16d64fbd11a3ca48fe603b31c5701050db"
+    },
+    {
+      "path": "程序/examples/editable/original.png",
+      "bytes": 73614,
+      "sha256": "3d452727a1d237ab53f8b2853eefa5da2351d8d8e476624067afa5704ffda6a7"
+    },
+    {
+      "path": "程序/examples/editable/project.json",
+      "bytes": 6411,
+      "sha256": "cb545da04710d13de67b13e6b9ecebf421e1c781a471c9611d06972e86039c8a"
+    },
+    {
+      "path": "程序/examples/example-inline.json",
+      "bytes": 206761,
+      "sha256": "6a92af23b5c83a4c47722e4ed151fc6b99916c3080bc06ae2c6d12da65cbffac"
+    },
+    {
+      "path": "程序/examples/example-v2.1.biozip",
+      "bytes": 123908,
+      "sha256": "325e37805f755649306340b8acaf20ae5e6ea9bb619f1979f372ab7a81933d93"
+    },
+    {
+      "path": "程序/examples/example-v2.1.png",
+      "bytes": 114333,
+      "sha256": "de4087fde80b0044f133e292bb84a4b7d60a2066a275a9419d13a38c330325a4"
+    },
+    {
+      "path": "程序/examples/example-v2.2.1-inline.json",
+      "bytes": 207542,
+      "sha256": "aa630088d730e449c5a18ab8cbaefffc530c31aab35e8696a054e19afb86e855"
+    },
+    {
+      "path": "程序/examples/example-v2.2.1.biozip",
+      "bytes": 124137,
+      "sha256": "58ddc2d40949efbffcc8a6b414d6778d30567cd3bfc05bd446134222fc14fb5c"
+    },
+    {
+      "path": "程序/examples/example-v2.2.1.png",
+      "bytes": 94559,
+      "sha256": "9af68f7aba08f0c7cce7c12d7200d229f24e30f4eca5760b2f11e60e7b3b2f16"
+    },
+    {
+      "path": "程序/examples/example-v2.2.biozip",
+      "bytes": 13452,
+      "sha256": "08ddf389efcdcaaf4dbd8327aa1c9cda3847810396df9ada1072ffb93e947153"
+    },
+    {
+      "path": "程序/examples/example-v2.2.png",
+      "bytes": 24038,
+      "sha256": "c22ee6711a4cfc2a2cee52cd7334c78c810533e452ed24ab96d65c0ecb40bac7"
+    },
+    {
+      "path": "程序/examples/example-v2.biozip",
+      "bytes": 123828,
+      "sha256": "29d92269b4af02553f682f59b78e65080330c48077a4871f854dcbb0381ed7ee"
+    },
+    {
+      "path": "程序/examples/example-v2.png",
+      "bytes": 137506,
+      "sha256": "a4f24050ad49daa4aef9de5f2f33864a7851978360f92c562eed3d0a2984167a"
+    },
+    {
+      "path": "程序/examples/example.biozip",
+      "bytes": 124253,
+      "sha256": "925446a9b9314602a230804cde8e9d560d5a0c8741f75acf137ab8f67dcafd40"
+    },
+    {
+      "path": "程序/examples/example.png",
+      "bytes": 114349,
+      "sha256": "ccfa8911e7fce2ff5a65921650a17f1344c9f9e8e09b91950518dc8d8b117ce2"
+    },
+    {
+      "path": "程序/examples/ordinary-photo.jpg",
+      "bytes": 95526,
+      "sha256": "5326b4806c44de04bc74beb05a9e8d339289cd49454c0341e192a06407097c26"
+    },
+    {
+      "path": "程序/examples/ordinary-photo.png",
+      "bytes": 791555,
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+    },
+    {
+      "path": "程序/examples/patch.json",
+      "bytes": 121,
+      "sha256": "3272fef6d81697e19a7e1c300e0eee67b557d4c2fb74e18b663b385fa9da17f6"
+    },
+    {
+      "path": "程序/examples/synthetic-gel.png",
+      "bytes": 10963,
+      "sha256": "5d96483eec792690ab1bea6d1483ac1aaf90b35e016acbffa61b15389b8da346"
+    },
+    {
+      "path": "程序/examples/test-1200x800.png",
+      "bytes": 73614,
+      "sha256": "3d452727a1d237ab53f8b2853eefa5da2351d8d8e476624067afa5704ffda6a7"
+    },
+    {
+      "path": "程序/examples/test-6000x4000.png",
+      "bytes": 2155921,
+      "sha256": "56f6742adea1a285486c75bb28201f2cc2728d94d05f3a199b983beb1f7627f4"
+    },
+    {
+      "path": "程序/index.html",
+      "bytes": 341,
+      "sha256": "60662a1829ac906d6f77c38c0dc4a84aa1f7728f714b4713e14b61ee1bfd669a"
+    },
+    {
+      "path": "程序/package-lock.json",
+      "bytes": 106243,
+      "sha256": "02b8e34c0a8efefe23b4a9be7b22d49e61105f1c5d04a16f4a536baf36c30ce0"
+    },
+    {
+      "path": "程序/package.json",
+      "bytes": 1490,
+      "sha256": "8a64c941bd0ae4b37bdd34e370ca07d81068e2b5fa64c6959bf02b750849d57c"
+    },
+    {
+      "path": "程序/public/app-icon.svg",
+      "bytes": 696,
+      "sha256": "5f7021a0c17361399c0421c33bc83ae309019d620a956f34db5883025677e092"
+    },
+    {
+      "path": "程序/public/fonts/LICENSE.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "程序/public/fonts/NotoSansCJKsc-Regular.otf",
+      "bytes": 16437364,
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+    },
+    {
+      "path": "程序/scripts/make-measurement-example.ts",
+      "bytes": 2076,
+      "sha256": "ded3a3e42e666e420163496928ff47249146a044109cad6fd4ab150e9908e206"
+    },
+    {
+      "path": "程序/scripts/package-webui.mjs",
+      "bytes": 6387,
+      "sha256": "6fbdeed573c713985c2fd6132d171aa80268c1a8b7906f6872bcd8ab082efcfc"
+    },
+    {
+      "path": "程序/scripts/start.ps1",
+      "bytes": 3788,
+      "sha256": "d682b2be50d6574a38c20b12b629cf088249cd2b35882340f59f1a84581f36c5"
+    },
+    {
+      "path": "程序/scripts/stop.ps1",
+      "bytes": 1225,
+      "sha256": "a99dc78049b985a9f94843106897cc0f9fe4f6ad5ad37b2eaa8359644aeaaadf"
+    },
+    {
+      "path": "程序/server/cli.ts",
+      "bytes": 2087,
+      "sha256": "e1047c3d7d832ecc1116cfe073aeb6ca2744a1b3a540fbad6dae343706c14ca9"
+    },
+    {
+      "path": "程序/server/export.ts",
+      "bytes": 1318,
+      "sha256": "d725ae729e88164e03643791dd54358e24fcfa5e204db38242cf4d8433539be5"
+    },
+    {
+      "path": "程序/server/index.ts",
+      "bytes": 6365,
+      "sha256": "1e0c925d3b1a925b690205c476253409cf0ed8072b5c81687234f6ffd9e12262"
+    },
+    {
+      "path": "程序/server/storage.ts",
+      "bytes": 7057,
+      "sha256": "62db0aa687d652eed931ebb05f29465caeef87a8104a1be03301f70a56ecee7b"
+    },
+    {
+      "path": "程序/src/AnnotationList.tsx",
+      "bytes": 4824,
+      "sha256": "9439ab1ee8f60f1828696b07252e9386d864d7f0d59493d79ac0e6b78ec10f8d"
+    },
+    {
+      "path": "程序/src/App.tsx",
+      "bytes": 58463,
+      "sha256": "3ab6d355b5786683b562600738588b367994919604d33b64a2048a6423575f68"
+    },
+    {
+      "path": "程序/src/DetailProperties.tsx",
+      "bytes": 3979,
+      "sha256": "f1ab3776e348e662917058074147691aee34f19d35981a27aa3b23fc5cd98907"
+    },
+    {
+      "path": "程序/src/MeasurementPanel.tsx",
+      "bytes": 15984,
+      "sha256": "4c0353e9487eaf6d59fd91410aa95837534c417dabdd72722af19daec3923a7c"
+    },
+    {
+      "path": "程序/src/RatioProperties.tsx",
+      "bytes": 3343,
+      "sha256": "03d5a7b14f7389cc5ae48eabe9a9fc0fda5e88ac9f7dc30eea24e5d18081ace7"
+    },
+    {
+      "path": "程序/src/RatioSeriesProperties.tsx",
+      "bytes": 3822,
+      "sha256": "961664835e23505b9169b864c2ccf15fc5ed7cfe447555b3442c529f4942d1ef"
+    },
+    {
+      "path": "程序/src/ToolIcon.tsx",
+      "bytes": 1027,
+      "sha256": "dd0c61c862a46dda1c25df8eb9662556da850be1582b8e91c801e39dcce77acd"
+    },
+    {
+      "path": "程序/src/api.ts",
+      "bytes": 2779,
+      "sha256": "0fe524c945dd79046b98f9616d4bdc912756a5d4def4715aee8c6d8b2fd50cca"
+    },
+    {
+      "path": "程序/src/main.tsx",
+      "bytes": 174,
+      "sha256": "65a08f6a2fe8f3a559024f22089d478118d12bfb9294641589abd10eaa738bdc"
+    },
+    {
+      "path": "程序/src/measurement.ts",
+      "bytes": 8601,
+      "sha256": "a460a1ed24992171d7f25a3bbdd6ad3a1c2b6cafe897d95402741d863ff600e2"
+    },
+    {
+      "path": "程序/src/measurementRender.ts",
+      "bytes": 2920,
+      "sha256": "a7b62a2efc686a3d59db7cc905776caaf33c7b6f07f35edfcbb6577797524381"
+    },
+    {
+      "path": "程序/src/model.ts",
+      "bytes": 11520,
+      "sha256": "99dd41d6419c7de3d65819bc15159123f72a94f4b08b7a56b1ae579b88cc5275"
+    },
+    {
+      "path": "程序/src/ratio.ts",
+      "bytes": 5972,
+      "sha256": "ea035199dc8987d7a1929f6722a66a98e6a9d115656c689979ad65b6bcde7521"
+    },
+    {
+      "path": "程序/src/ratioData.ts",
+      "bytes": 926,
+      "sha256": "09882a3ca167fa38823ee3c28758b7013544dfbcab878b7f9d06d6815bb52893"
+    },
+    {
+      "path": "程序/src/ratioRender.ts",
+      "bytes": 4151,
+      "sha256": "da370ec97f09c9f84d02fecb772f3de5c54dc424fc55e48573e6d5858c27e993"
+    },
+    {
+      "path": "程序/src/render.ts",
+      "bytes": 9312,
+      "sha256": "8fb22289234a6fda7836177479bfe104121d5f3f993b9f78d018c86d6010c109"
+    },
+    {
+      "path": "程序/src/style.css",
+      "bytes": 19324,
+      "sha256": "44cd082e667a5dbfd358e36ece163ee43cc6a3090534740c368a141cfc95cd44"
+    },
+    {
+      "path": "程序/src/workspace.ts",
+      "bytes": 1156,
+      "sha256": "59943dad288ebd122a4aa8904366ccfdcb304e4f07680a8f8d28f34591ab0b1e"
+    },
+    {
+      "path": "程序/tests/core.test.ts",
+      "bytes": 5494,
+      "sha256": "c2362300fb6a716bad83332a890f133a7861f2acfc5e055dad1390170049345a"
+    },
+    {
+      "path": "程序/tests/detail-v21.test.ts",
+      "bytes": 5268,
+      "sha256": "44d3d181d7510f451f8c010a956c9fbe38756775ba76d7f4c010cada842cb047"
+    },
+    {
+      "path": "程序/tests/detail.test.ts",
+      "bytes": 5013,
+      "sha256": "b8ce999199f5d771a57a22b8f6130d7dcf060dd710a121e3f28f1f61dbaa0315"
+    },
+    {
+      "path": "程序/tests/interaction.test.ts",
+      "bytes": 6393,
+      "sha256": "c84a56b5dae25f800a81e67f1fc4f07dd637c707355bacc6a1c2e29a4ef579fb"
+    },
+    {
+      "path": "程序/tests/measurement-browser.mjs",
+      "bytes": 15976,
+      "sha256": "32e3febdf5fda5faed2eb7a58baf7f612f9d1e701aa92ea3cf5513d6a066483f"
+    },
+    {
+      "path": "程序/tests/measurement-label-browser.mjs",
+      "bytes": 7971,
+      "sha256": "7ee813c44e7a6b1384839d3297f137394efa02d5803c54c855121cc32b3b2a70"
+    },
+    {
+      "path": "程序/tests/measurement.test.ts",
+      "bytes": 10159,
+      "sha256": "67f0e8bfbc5882c98947ba42294ea1f1066c3db346d7aec6aaddabdf58fa1458"
+    },
+    {
+      "path": "程序/tests/prepare-ui-fixture.ts",
+      "bytes": 943,
+      "sha256": "37adf7817bf71876d9beef899c2f65e98f9787259d2897ca53e7eea261224f0a"
+    },
+    {
+      "path": "程序/tests/ratio.test.ts",
+      "bytes": 8706,
+      "sha256": "1feea822a878c9d3facf5336de58056ed33ea63f14927cbf0530b6d4e1bf2869"
+    },
+    {
+      "path": "程序/tests/series.test.ts",
+      "bytes": 3959,
+      "sha256": "8135e90e6c2641b358e0a92f4798e2fb06f5ca7aea35ee3d7861d6f8d7cd8aa9"
+    },
+    {
+      "path": "程序/tests/v1.1-browser.mjs",
+      "bytes": 9101,
+      "sha256": "209e5518357495de8ed0d02648ba49df3a3f2397d6f82270c8889209b9e70372"
+    },
+    {
+      "path": "程序/tests/v2-browser.mjs",
+      "bytes": 20340,
+      "sha256": "da12ca482cedb0b29e184f992d6e472656835e4c260affec5076aef665f04ac5"
+    },
+    {
+      "path": "程序/tsconfig.json",
+      "bytes": 300,
+      "sha256": "b6095215990c57a121f933d512e874acdb5aba0f38e2f43818dd7dacfa556b06"
+    },
+    {
+      "path": "程序/vite.config.ts",
+      "bytes": 101,
+      "sha256": "0d73a04f68b3d0e2b8942df60684e26efc465e8b98b2ddadb775f0adb95c02b5"
+    },
+    {
+      "path": "文档/使用指南.md",
+      "bytes": 17785,
+      "sha256": "2c534ba4bef3ab825aabc2617c2122c83fbd2a61061ded845dfcaa27b2f8ad88"
+    },
+    {
+      "path": "文档/版本说明.md",
+      "bytes": 1991,
+      "sha256": "7ccd8f07dfd919e804a565f44d7a8249735d98c9e824c470d729aa694d73435a"
+    },
+    {
+      "path": "文档/验证记录.md",
+      "bytes": 1622,
+      "sha256": "11f28f5667aba650d1e013df7404dfaaed4bbfcca972cd0ae4ac3bbd651cb434"
+    },
+    {
+      "path": "文档/开发指南.md",
+      "bytes": 1596,
+      "sha256": "4a666c517831925067abafcaab16cbf3fc91cef58c81d7e54b699464ecc9565d"
+    },
+    {
+      "path": "文档/Codex-CLI指南.md",
+      "bytes": 2745,
+      "sha256": "5796e035f5118b6655065e08c07dd5e2c4ffdec54c43db371f739762158b545c"
+    },
+    {
+      "path": "文档/发布包说明.md",
+      "bytes": 806,
+      "sha256": "7e797c792e3b24e19ec3fd1ecc5f8198d3e28d435fd5d42897f57da00a85cf9a"
+    },
+    {
+      "path": "文档/第三方许可.txt",
+      "bytes": 229,
+      "sha256": "aa34cc5b2b272137c1afad684bc6e055977747937718539661059d37f1f8dafa"
+    },
+    {
+      "path": "启动.vbs",
+      "bytes": 1100,
+      "sha256": "fcc510b6e2b0c4977064a270cc2d9e03d4e6bac895b343c5e036b6660390a76f"
+    },
+    {
+      "path": "停止.vbs",
+      "bytes": 1096,
+      "sha256": "ce792b4f15645199930ffa5a7f1273a8f70a1698b7fc425fd005a01ee76c2c80"
+    },
+    {
+      "path": "首次初始化.cmd",
+      "bytes": 80,
+      "sha256": "b98474d26c51e6688e5ca7b70521a37c1a1861f50ffae69d69d19b00cddc7119"
+    },
+    {
+      "path": "使用指南.html",
+      "bytes": 18597,
+      "sha256": "3f695f88a9facef77905c78379c7081ca16c4eedadfe52ea04b455bdd317dcc2"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 685,
+      "sha256": "7cd1ad9f3aef1cc1d64860d1b9cedff917fd02df2b6466107ac309bd40d9a04c"
+    },
+    {
+      "path": "文档/命令行启动.cmd",
+      "bytes": 83,
+      "sha256": "0d18fb4d0c83aeb1d3c848a6f7b7ee573a6202d5f7a71f2518102834f6598de1"
+    },
+    {
+      "path": "文档/命令行停止.cmd",
+      "bytes": 82,
+      "sha256": "03dca09e505d22a09b3fa11722eb084f1e1af2683a900f9f51a1ac26e958bf9a"
+    }
+  ]
+}

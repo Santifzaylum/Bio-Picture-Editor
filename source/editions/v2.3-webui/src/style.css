@@ -1,0 +1,130 @@
+@font-face{font-family:BioSans;src:url('/fonts/NotoSansCJKsc-Regular.otf') format('opentype');font-display:block}*{box-sizing:border-box}body{margin:0;color:#263446;font:13px BioSans,'Microsoft YaHei',sans-serif;background:#edf1f7}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid #d7deea;border-radius:6px;background:#fff;color:#334155;padding:7px 10px;transition:background .15s}button:hover{background:#edf4ff;border-color:#9fbde5}button:disabled{opacity:.4;cursor:default}input,textarea,select{min-width:0;border:1px solid #d5deea;border-radius:5px;background:#fff;padding:6px;color:#263446;width:100%}input[type=color]{padding:2px;width:42px;height:28px}input[type=checkbox]{width:14px}input[type=range]{padding:0}textarea{resize:vertical;line-height:1.65}.app{height:100dvh;display:flex;flex-direction:column}header{display:flex;align-items:center;gap:26px;padding:12px 18px;background:white;border-bottom:1px solid #d8e1ed;flex-shrink:0}.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}.brandMark{width:32px;height:36px;background:#e8f0fb;color:#245b98;border-radius:8px;display:grid;place-items:center;font-size:22px}.brand b{font-size:16px;letter-spacing:1px}.brand small{display:block;color:#8593a8;font-size:10px}.primary{background:#235f9c;color:white;border-color:#235f9c}.primary:hover,.export:hover{background:#194c81;color:white}.export{background:#e9f1fc;color:#225c96;border-color:#bacee5}nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap;flex:1}nav select{width:110px;font-size:12px}.workspace{display:flex;flex:1;min-height:0}.tools{width:144px;border-right:1px solid #dbe2ed;background:#f9fbfe;padding:12px;overflow-y:auto;flex-shrink:0}.tools button{width:100%;margin-bottom:7px}.sectionTitle{font-size:11px;font-weight:bold;color:#8797ae;letter-spacing:1px;margin:15px 0 10px}.tool{display:flex;justify-content:space-between;align-items:center;border-color:transparent;background:transparent}.tool.active{background:#e4eefc;border-color:#a6c3e9;color:#1d5793}.tool kbd{font-size:10px;color:#9ba9bd;background:transparent}.divider{height:1px;background:#dbe2ed;margin:15px 0}.tip{font-size:11px;color:#7e8da3;line-height:1.9;margin:14px 0}main{flex:1;min-width:0;display:flex;flex-direction:column}.canvasTitle{padding:11px 16px;border-bottom:1px solid #d9e1eb;display:flex;gap:16px;justify-content:space-between;color:#41546f;font-size:12px}.canvasTitle>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:50%}.hint{color:#8998ad;font-size:11px}.canvas{position:relative;flex:1;min-height:0;overflow:hidden;background-color:#e9edf3;background-image:radial-gradient(#c8d1df 1px,transparent 1px);background-size:16px 16px;outline:none}.canvas:focus{box-shadow:inset 0 0 0 1px #bdd0e9}.canvasHelp{padding:7px 14px;font-size:10px;color:#8998ac;background:#f5f7fa}.properties{width:280px;flex-shrink:0;border-left:1px solid #dbe2ed;padding:12px 16px;background:#fff;overflow-y:auto}.collapsed{width:49px;padding:10px 5px}.collapse{font-size:10px;width:100%;padding:6px 2px;color:#8191a7;background:transparent;border-color:#e5eaf2}.properties label{display:block;font-size:11px;color:#677891;margin:8px 0}.properties label input,.properties label textarea,.properties label select{margin-top:4px}.properties .row{display:flex;justify-content:space-between;align-items:center}.properties .check{display:flex;gap:8px;align-items:center}.check input{margin-top:0!important}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.objectMeta{font-size:10px;color:#8b9bb0}.swatches{display:flex;gap:8px;margin:10px 0}.swatches button{width:24px;height:22px;padding:0;border:1px solid #bdcadc}fieldset{border:0;padding:0;margin:0}details{margin-top:10px;border-top:1px solid #e6ebf2;padding-top:10px}summary{font-size:11px;cursor:pointer;color:#60748e}.smallActions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:14px 0}.smallActions button{font-size:11px;padding:5px}.objectList{max-height:300px;overflow:auto}.objectRow{display:flex;gap:3px;padding:4px 0;border-bottom:1px solid #edf1f6}.objectRow.selected{background:#e9f2ff}.objectRow button{border:0;background:transparent;font-size:10px;padding:3px}.objectName{flex:1;min-width:0;text-align:left}.objectName b{font-size:10px}.objectName span{display:block;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#8190a5}.objectName small{color:#a06815}.empty{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#71839d}.emptySymbol{border:1px solid #b7c9de;border-radius:12px;padding:1px 21px;background:#f4f8fd;color:#577a9f;font-size:48px}.empty h1{font-size:22px;font-weight:400;color:#3d5677;margin-bottom:0}.empty p{font-size:12px;line-height:1.9}.emptyNote{margin-top:40px;text-align:center;color:#95a3b6;font-size:10px!important}footer{display:flex;justify-content:space-between;gap:10px;padding:8px 14px;border-top:1px solid #d5dfed;background:#fff;font-size:10px;color:#8090a6;flex-shrink:0}.unsaved{color:#986421}.conflict{position:fixed;bottom:45px;left:50%;transform:translateX(-50%);background:#fff9e8;border:1px solid #dfbb61;box-shadow:0 6px 35px #0002;padding:18px;z-index:20;width:min(600px,95vw);border-radius:9px}.conflict button{margin-right:6px}.modal{position:fixed;inset:0;background:#17203355;display:grid;place-items:center;z-index:30}.dialog{background:white;border-radius:12px;padding:24px;width:min(520px,95vw);max-height:85vh;overflow:auto}.dialog h2{font-size:18px}.dialog button{display:block;width:100%;margin:8px 0;text-align:left}.dialog small{display:block;color:#8290a4;font-size:10px;margin-top:6px}.directory{font-size:10px;color:#8c9bae;overflow-wrap:anywhere}@media(max-width:1050px){header{gap:12px;padding:8px 10px}.brand small{display:none}nav button{font-size:11px;padding:6px}.hint{display:none}.properties{width:246px;padding:10px}.tools{width:122px;padding:9px}.collapsed{width:42px;padding:5px}footer{flex-wrap:wrap;padding:5px 9px}}@media(max-width:720px){header{align-items:flex-start}.brand{display:none}.tools{width:90px;padding:6px}.properties{width:205px;padding:8px}.collapsed{width:36px;padding:3px}.tool{padding:6px}.tool kbd{display:none}.canvasTitle{font-size:10px;padding:9px}.canvasHelp{display:none}footer{font-size:9px}.empty h1{font-size:16px}.empty p{max-width:200px;text-align:center}nav{gap:4px}nav select{width:91px}.emptyNote{display:none}}
+/* Scrollable document tabs keep the canvas accessible in the Codex side panel. */
+.documentTabs{display:flex;align-items:center;gap:4px;padding:5px 8px 0;background:#f5f7fb;border-bottom:1px solid #d9e1eb;overflow-x:auto;flex-shrink:0;min-height:39px}
+.documentTab{display:flex;align-items:center;flex-shrink:0;border:1px solid #d9e1eb;border-bottom:0;border-radius:6px 6px 0 0;background:#edf1f7}
+.documentTab.active{background:#fff;border-color:#98b7dc;box-shadow:inset 0 2px #235f9c}
+.documentTab button{background:transparent;border:0;border-radius:0;padding:7px 9px;font-size:11px;display:flex;gap:5px;align-items:center}
+.documentTab button[role=tab] span:first-child{max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.documentTab.active button[role=tab]{color:#1d5793}
+.documentTab .closeTab{padding:4px 7px;margin-right:3px;border-radius:4px;color:#8191a7}
+.documentTab .closeTab:hover{background:#dce7f5;color:#334155}
+.dirtyDot{color:#986421;font-weight:bold}
+.documentTabs .addDocument{flex-shrink:0;padding:5px 8px;font-size:11px;background:transparent;border-color:transparent;white-space:nowrap}
+
+/* Explicit color controls: labels and row whitespace never activate the picker. */
+.properties .colorRow{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#677891;margin:8px 0;min-height:32px;gap:12px}
+.colorRow input[type=color]{flex:0 0 42px;margin:0;cursor:pointer}
+.brandMark{width:40px;height:40px;background:transparent;border-radius:10px;flex-shrink:0}
+.tools .tool{gap:6px;padding:8px 7px;min-height:38px}
+.toolVisual{display:flex;align-items:center;gap:4px;flex-shrink:0}
+.toolIcon{width:20px;height:20px;display:block}
+.toolVisual kbd{width:9px;text-align:center}
+.detailProperties{padding:0 0 10px;border-bottom:1px solid #e6ebf2;margin-bottom:12px}
+@media(max-width:720px){.toolVisual kbd{display:none}.toolIcon{width:17px;height:17px}.tools .tool{padding:7px 2px}.tools{width:106px}.tools.collapsed{width:36px}}
+
+/* v2.1: clear view-only mode and independent magnifier controls. */
+.tool>span:first-child{white-space:nowrap}.toolVisual{flex-shrink:0}.tool{gap:4px;padding-left:6px;padding-right:6px}.toolIcon{width:20px;height:20px}
+.originalActive{background:#e4eefc!important;border-color:#7b9bc3;color:#164c84}.originalView{box-shadow:inset 0 0 0 2px #86a9d2}.originalBanner{position:absolute;top:12px;left:12px;right:12px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 14px;border:1px solid #a7bed9;background:#f4f8fff2;color:#244c79;border-radius:8px;box-shadow:0 3px 12px #19344e15}.originalBanner b{display:block;font-size:13px}.originalBanner span{display:block;font-size:11px;margin-top:3px}.originalBanner button{flex-shrink:0;color:#164c84;border-color:#a7bed9}.detailHint{font-size:11px;line-height:1.85;color:#476686;background:#f3f7fc;border-radius:6px;padding:9px;margin:8px 0}.detailParts{display:flex;gap:4px}.detailParts button{flex:1;font-size:11px;padding:7px 2px;display:flex;flex-direction:column;align-items:center;gap:4px}.detailParts svg{width:22px;height:22px}.detailParts button[aria-pressed=true]{background:#e8f1fd;border-color:#8baed6;color:#20588e}.detailStylePanel{margin-top:8px;padding:10px;border:1px solid #dce5f0;border-radius:6px;background:#fafcff}.detailStylePanel>b{display:block;font-size:11px;color:#476686;margin-bottom:8px}.properties>fieldset:disabled{opacity:.55}
+@media(max-width:1050px){.tools:not(.collapsed){width:142px}.tool kbd{display:none}.originalBanner span{max-width:280px}}@media(max-width:720px){.originalBanner{padding:8px;left:6px;right:6px}.originalBanner span{display:none}.originalBanner b{font-size:11px}.originalBanner button{font-size:10px;padding:6px}}
+
+/* Compact multi-sample measurements use the existing property-panel palette. */
+.ratioSeriesTable{max-height:260px;overflow:auto;margin-top:10px}.ratioSeriesRow{display:grid;grid-template-columns:minmax(55px,1fr) 48px 52px 21px;gap:4px;align-items:center;padding:3px 0;border-bottom:1px solid #edf1f6}.ratioSeriesRow input{font-size:10px;padding:4px 3px}.ratioSeriesRow output{font-size:11px;color:#235f9c;text-align:center}.ratioSeriesRow button{padding:2px;font-size:11px}.ratioSeriesHeader{font-size:10px;color:#8797ae}.ratioSeriesProperties>button{width:100%;font-size:11px}
+
+.properties fieldset{min-width:0}
+.measurementPanel{min-width:0;border-bottom:1px solid #e6ebf2;padding-bottom:12px;margin-bottom:12px}
+.measurementPanel>button{width:100%;font-size:11px}
+.measurementTableScroll{max-height:290px;overflow:auto;border:1px solid #dce5f0;border-radius:5px;margin:10px 0}
+.measurementTable{border-collapse:collapse;min-width:790px;width:100%;font-size:11px}
+.measurementTable th{position:sticky;top:0;background:#f3f7fc;color:#476686;text-align:left;white-space:nowrap}
+.measurementTable td,.measurementTable th{padding:7px 8px;border-bottom:1px solid #edf1f6;max-width:190px;overflow-wrap:anywhere}
+.measurementTable tr.selected{background:#e9f2ff}
+.measurementTable td button{font-size:11px;padding:3px;text-align:left;border:0;background:transparent;max-width:180px;overflow-wrap:anywhere;color:#235f9c}
+.measurementDialog{width:min(1120px,95vw)}
+.measurementDialog .measurementTableScroll{max-height:60vh}
+.measurementDialog td button{margin:0;width:auto}
+
+.measurementLabelControls{padding:8px 10px;border:1px solid #dce5f0;border-radius:6px;background:#f3f7fc;margin:8px 0 12px}.measurementLabelControls .tip{margin:7px 0 0}
+
+/* Inspector: stable navigation, contextual controls and a bounded object list. */
+.properties{width:304px;padding:0;display:flex;flex-direction:column;overflow:hidden;background:#f7f9fc}
+.properties.collapsed{width:49px;padding:10px 5px;background:#fff}
+.inspectorHeader{flex:none;padding:12px 14px 0;background:#fff;border-bottom:1px solid #dce4ef}
+.properties.collapsed .inspectorHeader{padding:0;border:0}
+.inspectorHeader .collapse{font-size:11px;padding:5px;color:#718197}
+.inspectorTabs{display:flex;gap:8px;margin-top:10px}
+.inspectorTabs button{flex:1;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;padding:10px 3px;color:#718198;font-size:13px;white-space:nowrap}
+.inspectorTabs button[aria-selected=true]{color:#235f9c;border-bottom-color:#235f9c;font-weight:600}
+.countBadge{display:inline-block;margin-left:5px;padding:1px 6px;min-width:20px;border-radius:10px;background:#eaf0f8;font-size:11px;color:#55718e;font-variant-numeric:tabular-nums}
+.inspectorBody{padding:14px 8px;overflow-y:auto;flex:1;min-height:0;scrollbar-width:thin;scrollbar-gutter:stable both-edges}
+.inspectorBody>section[hidden]{display:none}
+.inspectorBody:disabled{opacity:.55}
+.selectionSummary{display:flex;align-items:center;gap:10px;margin:0 0 14px;min-height:44px}
+.selectionSummary>div{min-width:0;flex:1}
+.selectionSummary b{display:block;font-size:14px;color:#2c4663;font-weight:600;overflow-wrap:anywhere}
+.selectionSummary div>span{display:block;font-size:11px;color:#7b899d;line-height:1.6;margin-top:3px}
+.selectionIcon{width:36px;height:36px;background:#e8f0fa;border:1px solid #d8e5f4;border-radius:9px;display:grid;place-items:center;color:#386b9e;flex:none}
+.quietButton{padding:4px 7px;font-size:11px;color:#5b7492;background:transparent}
+.propertyCard{border:1px solid #e0e7f0;border-radius:9px;background:#fff;padding:12px;margin:0 0 12px;min-width:0}
+.cardTitle{color:#405773;font-size:12px;font-weight:600;margin-bottom:10px}
+.properties label{font-size:12px;line-height:1.6;color:#5e7189;margin:8px 0}
+.properties input:not([type=checkbox]):not([type=color]):not([type=range]),.properties select,.properties textarea{font-size:12px;padding:7px 8px;border-color:#dbe3ee;border-radius:6px}
+.properties textarea{max-height:220px}
+.properties input:focus-visible,.properties textarea:focus-visible,.properties select:focus-visible{outline:2px solid #b6d0ee;outline-offset:1px;border-color:#7ba4ce}
+.properties button:focus-visible,.properties summary:focus-visible{outline:2px solid #7ba4ce;outline-offset:2px}
+.properties .formGrid{gap:10px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.properties .formGrid>label{min-width:0}
+.properties .toggleRow{display:flex;flex-wrap:wrap;gap:6px 18px}
+.properties .toggleRow .check{margin:5px 0}
+.properties .check{gap:6px;line-height:1.7}
+.properties .check input{flex:none;margin-left:0;accent-color:#235f9c}
+.properties .colorRow{font-size:12px;color:#5e7189}
+.paletteRow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 10px}
+.paletteRow .swatches{margin:0;gap:7px}
+.paletteRow .swatches button{width:24px;height:24px;border-radius:50%;border:1px solid #bccbdc}
+.paletteRow .swatches button[aria-pressed=true]{outline:2px solid #608cbe;outline-offset:2px}
+.paletteRow input[type=color]{flex:none;width:36px;height:28px;border-radius:6px}
+.properties summary{font-size:12px;line-height:1.7;color:#506884;user-select:none}
+.properties details.propertyCard>summary{font-weight:500}
+.properties .subDisclosure{border-top:1px solid #edf0f5;margin-top:10px;padding-top:10px}
+.summaryMeta{float:right;font-size:11px;font-weight:400;color:#8a98aa}
+.properties .primaryLabel{margin:0;color:#405773;font-weight:500}
+.properties .smallActions{gap:7px;margin:8px 0 0}
+.properties .smallActions button{font-size:12px;padding:7px 3px}
+.properties .dangerAction{color:#a45151}
+.properties .dangerAction:hover{background:#fdf0f0;border-color:#dfbaba}
+.properties .fullWidth{width:100%;font-size:12px}
+.panelHint{font-size:11px;line-height:1.8;color:#8190a3;margin:8px 0}
+.properties label output{float:right;color:#416c98;font-variant-numeric:tabular-nums}
+.properties .sectionTitle{letter-spacing:0;font-size:12px;color:#4f6782;margin:12px 0}
+.properties .objectMeta{font-size:11px;margin-top:8px}
+.properties .tip{font-size:11px;line-height:1.75}
+.panelEmpty{text-align:center;color:#8593a7;font-size:12px;line-height:1.9;padding:28px 12px}
+.listBody{display:flex;flex-direction:column;overflow:hidden;padding:14px 10px}
+.listBody>#inspector-objects{display:flex;flex:1;min-height:0}
+.annotationBrowser{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0}
+.listFilters{flex:none;padding:0 3px 8px}
+.listFilters>.formGrid{margin-top:8px;gap:6px}
+.listSummary{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8090a5;gap:6px;margin-top:10px}
+.listSummary button{font-size:11px;padding:4px 7px;color:#346797}
+.annotationBrowser .objectList{max-height:none;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:2px}
+.annotationBrowser .objectRow{align-items:center;gap:5px;border:1px solid transparent;border-bottom-color:#e7edf4;border-radius:7px;padding:8px 5px;margin:2px 0}
+.annotationBrowser .objectRow:hover{background:#eef3fa}
+.annotationBrowser .objectRow.selected{background:#e8f1fc;border-color:#b9cfe8}
+.objectTypeIcon{display:grid;place-items:center;width:27px;height:29px;border:1px solid #e0e6ee;border-radius:6px;background:#fff;flex:none}
+.objectTypeIcon .toolIcon{width:18px;height:18px}
+.annotationBrowser .objectName{align-self:stretch;padding:2px 0;overflow:hidden}
+.annotationBrowser .objectName b{display:block;font-weight:500;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.annotationBrowser .objectName span{max-width:none;font-size:11px;margin-top:4px;color:#7c8ea5}
+.objectRow.isHidden .objectName{opacity:.6}
+.annotationBrowser .objectToggle{display:grid;place-items:center;padding:4px;width:25px;height:28px;color:#8a9aad;border-radius:5px;flex:none}
+.annotationBrowser .objectToggle[aria-pressed=true]{color:#32689b;background:#dce8f7}
+.annotationBrowser .objectToggle:hover{background:#dce8f7;color:#32689b}
+.listPagination{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;color:#6e819b;padding-top:10px;border-top:1px solid #dce4ef}
+.listPagination button{font-size:11px;padding:5px 9px}
+.listHint{flex:none;text-align:center;color:#8a98ac;font-size:10px;margin:10px 0 0}
+.properties .measurementPanel,.properties .detailProperties{border:1px solid #e0e7f0;border-radius:9px;background:white;padding:12px;margin-bottom:12px}
+.properties .propertyCard .measurementPanel{padding:0;border:0;margin:10px 0 0}
+.measurementDataSection>summary{display:flex;align-items:center;gap:5px}
+.finishMeasurement{width:100%;margin-top:12px;color:#235f9c;background:#eef4fc;border-color:#c2d5ec}
+@media(max-width:1050px){.properties{width:280px}.inspectorHeader{padding:10px 12px 0}.inspectorBody{padding:12px}.properties.collapsed{width:42px}}
+@media(max-width:720px){.properties{width:250px}.properties.collapsed{width:36px}.inspectorBody{padding:10px}.propertyCard{padding:10px}.paletteRow{gap:6px}.paletteRow .swatches{gap:6px}.paletteRow .swatches button{width:22px;height:22px}.inspectorTabs{gap:4px}}

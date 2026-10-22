@@ -1,6 +1,6 @@
 # Codex 协作指南入口
 
-Windows 桌面 v2.2.1-p 使用随包“文档/desktop-cli.ps1”或 Codex-CLI.cmd，见 [桌面协作指南](docs/windows/v2.2.1-p/CODEX_GUIDE.md)。Windows WebUI v2.2.1 见 [浏览器协作指南](docs/windows/v2.2.1-webui/CODEX_GUIDE.md)。Mac 版因缺乏测试，目前暂停更新。
+Windows 桌面 v2.2.1-p 使用随包“文档/desktop-cli.ps1”或 Codex-CLI.cmd，见 [桌面协作指南](docs/windows/v2.2.1-p/CODEX_GUIDE.md)。Windows WebUI v2.3 见 [浏览器协作指南](docs/windows/v2.3-webui/CODEX_GUIDE.md)。Mac 版因缺乏测试，目前暂停更新。
 
 先启动服务并保存项目，在程序目录运行命令。CLI 与界面必须使用同一 data 目录。
 
@@ -13,7 +13,7 @@ npm run cli -- export PROJECT_ID final.png 1
 npm run cli -- crop PROJECT_ID local.png 900 100 200 200
 ```
 
-默认服务端口为 4323，CLI 从 data/runtime.json 获取实际端口与令牌。请勿分享 runtime.json。标注定位使用 display.png，对应 EXIF 方向校正后的原图像素坐标。
+默认服务端口为 4324，CLI 从 data/runtime.json 获取实际端口与令牌。请勿分享 runtime.json。标注定位使用 display.png，对应 EXIF 方向校正后的原图像素坐标。
 
 summary 返回 measurement、ratio、对象 ID、类型、几何、状态及局部放大的 detail 参数。patch 支持原有 label、description、geometry、style、visible、locked、status，也支持放大对象的 detail 局部修改。例如 {"detail":{"magnification":3}} 会以当前展示圆中心为基准同步重算直径。取样圆越界或输出尺寸不一致时拒绝保存；CLI 修改局部放大时也按对象边界补足四周留白，避免展示圆被裁切。
 

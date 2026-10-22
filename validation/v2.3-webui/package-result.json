@@ -1,0 +1,17 @@
+{
+  "zip": "https://github.com/Santifzaylum/Bio-Picture-Editor/releases/download/v2.3-webui/Bio-Picture-Editor-v2.3-webui.zip",
+  "bytes": 17499111,
+  "sha256": "681aba519a8f86ac67266eb1c09fc44128291935717ef428643cae29331e8066",
+  "verifiedFiles": 93,
+  "rootFiles": [
+    "启动.vbs",
+    "停止.vbs",
+    "首次初始化.cmd",
+    "使用指南.html",
+    "README.txt"
+  ],
+  "folders": [
+    "程序",
+    "文档"
+  ]
+}

@@ -1,0 +1,1 @@
+Third-party code is installed by npm ci using package-lock.json. Offline font license: public/fonts/LICENSE.txt. Example image license: examples/IMAGE-LICENSE.md. No Node.js runtime is redistributed in this lightweight package.

@@ -1,0 +1,23 @@
+import fs from 'node:fs/promises';
+import {randomUUID} from 'node:crypto';
+import {createCanvas} from '@napi-rs/canvas';
+import {clone,defaultStyle,type Annotation,type Project,validate} from '../src/model';
+import {makeMeasurement} from '../src/measurement';
+import {includeMeasurement} from '../src/measurementRender';
+import {packageProject} from '../server/storage';
+import {exportPng} from '../server/export';
+const p:Project=JSON.parse(await fs.readFile('examples/example-inline.json','utf8'));
+p.id=randomUUID();p.title='长度与比例示例（人工测试图）';p.annotations=[];p.revision=0;p.layout={left:0,right:0,top:0,bottom:0,background:'#ffffff'};
+const ctx=createCanvas(1200,800).getContext('2d');
+const add=(name:string,start:{x:number;y:number},end:{x:number;y:number},referenceId?:string)=>{
+ const a:Annotation={id:randomUUID(),type:'ratio',imageId:p.image.id,geometry:{x:0,y:0,x2:0,y2:0,width:1,height:1,unit:'image-pixel'},style:{...clone(defaultStyle),fontSize:20},label:name,description:'人工演示线段，无医学含义。',visible:true,locked:false,zIndex:p.annotations.length,status:'user'};
+ makeMeasurement(a,start,end,{group:'演示组',referenceId,labelMode:referenceId?'both':'name',ratioName:''});p.annotations.push(a);includeMeasurement(p,a,ctx);return a;
+};
+const ref=add('参考线 / 标定线',{x:100,y:120},{x:100,y:320});
+add('独立待测 A',{x:350,y:120},{x:650,y:520},ref.id);
+add('独立待测 B',{x:850,y:470},{x:850,y:620},ref.id);
+p.calibration={referenceId:ref.id,pixels:200,realLength:100,unit:'μm',source:'人工设定：200 px 对应 100 μm',isotropic:true};p.caption='人工示例。参考线 200 px，A 为 500 px，B 为 150 px；比值为 2.5 和 0.75。示例标定系人工设定，不代表底图真实物理尺度。';validate(p);
+await fs.writeFile('examples/example-v2.2.1.biozip',packageProject(p));
+await fs.writeFile('examples/example-v2.2.1.png',await exportPng(p));
+await fs.writeFile('examples/example-v2.2.1-inline.json',JSON.stringify(p,null,2)+'\n');
+console.log('v2.2.1 人工示例已生成。');
